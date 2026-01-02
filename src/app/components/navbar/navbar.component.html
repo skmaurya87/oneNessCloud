@@ -1,0 +1,87 @@
+<div class="bg-primary text-primary-foreground py-2">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-6 text-sm"><a
+        href="tel:+1234567890" class="flex items-center gap-2 hover:text-accent transition-colors"><svg
+          xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-phone h-4 w-4" aria-hidden="true">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+          </path>
+        </svg><span>+1 (234) 567-890</span></a><a href="mailto:info@onenesscloud.com"
+        class="flex items-center gap-2 hover:text-accent transition-colors"><svg xmlns="http://www.w3.org/2000/svg"
+          width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-4 w-4" aria-hidden="true">
+          <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+          <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        </svg><span>info@onenesscloud.com</span></a></div>
+  </div>
+</div>
+
+
+<header class="bg-background border-b border-border sticky top-0 z-50 shadow-sm">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <div class="flex-shrink-0"><a href="#">
+        <img src="assets/images/logo.png" alt="Oneness Cloud Logo" class="h-10 md:h-14">
+        </a>
+      </div>
+      <nav class="hidden md:flex items-center gap-8">
+<a routerLink="about-us" class="text-foreground hover:text-primary font-medium transition-colors relative group">About
+  Us<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+<a routerLink="course-list"
+  class="text-foreground hover:text-primary font-medium transition-colors relative group">Courses
+  <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+<a routerLink="blogs"
+  class="text-foreground hover:text-primary font-medium transition-colors relative group">Blogs
+  <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+        </nav>
+
+
+      <button (click)="toggleMobileMenu()" class="md:hidden text-foreground hover:text-primary transition-colors" aria-label="Toggle menu">
+        <svg *ngIf="!isMobileMenuOpen"
+          xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-menu h-6 w-6" aria-hidden="true">
+          <path d="M4 12h16"></path>
+          <path d="M4 18h16"></path>
+          <path d="M4 6h16"></path>
+        </svg>
+        <svg *ngIf="isMobileMenuOpen"
+          xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-x h-6 w-6" aria-hidden="true">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div *ngIf="isMobileMenuOpen" 
+       class="md:hidden bg-background border-t border-border animate-fade-in">
+    <nav class="container mx-auto px-4 py-4 flex flex-col gap-4">
+      <a (click)="closeMobileMenu()" 
+         href="#about"
+         class="text-foreground hover:text-primary font-medium transition-colors py-2">
+        About Us
+      </a>
+      <a (click)="closeMobileMenu()" 
+         href="#resources"
+         class="text-foreground hover:text-primary font-medium transition-colors py-2">
+        Resources
+      </a>
+      <a (click)="closeMobileMenu()" 
+         href="#services"
+         class="text-foreground hover:text-primary font-medium transition-colors py-2">
+        Services
+      </a>
+      <a (click)="closeMobileMenu()" 
+         href="#contact"
+         class="text-foreground hover:text-primary font-medium transition-colors py-2">
+        Contact Us
+      </a>
+    </nav>
+  </div>
+</header>

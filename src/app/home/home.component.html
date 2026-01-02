@@ -1,0 +1,96 @@
+<main class="flex-grow">
+    <section class="relative min-h-[500px] md:min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0"><img alt="IT Training Background" class="w-full h-full object-cover"
+                src="assets/images/main-banner.jpg">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary/80 to-primary/60"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl animate-fade-in">
+                <h1
+                    class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-primary-foreground leading-tight mb-6">
+                    Transform Your Career with<span class="block mt-2 text-accent">World-Class IT Training</span></h1>
+                <p class="text-lg sm:text-xl text-primary-foreground/90 mb-8 leading-relaxed">Master cutting-edge
+                    technologies with industry experts. Get certified, build real-world projects, and accelerate your IT
+                    career with our comprehensive training programs.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button [routerLink]="['/course-list']"
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 rounded-md px-8 bg-accent hover:bg-accent-hover text-accent-foreground font-semibold shadow-lg btn-hover-lift group">Explore
+                        all Courses<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-arrow-right ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform"
+                            aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg></button>
+                        <!-- <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow-sm h-10 rounded-md px-8 border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold btn-hover-lift"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-circle-play mr-2 h-5 w-5" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                        </svg>Watch Demo</button> -->
+                    </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-secondary py-8 md:py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left animate-fade-in"
+                    style="animation-delay: 0s;">
+                    <div class="flex-shrink-0 w-14 h-14 rounded-full bg-accent/80 flex items-center justify-center"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-award h-7 w-7 text-gray-300" aria-hidden="true">
+                            <path
+                                d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
+                            </path>
+                            <circle cx="12" cy="8" r="6"></circle>
+                        </svg></div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-secondary-foreground mb-1">Certified &amp; Experienced
+                            Trainers</h3>
+                        <p class="text-sm text-secondary-foreground/80">Learn from industry-certified professionals</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left animate-fade-in"
+                    style="animation-delay: 0.1s;">
+                    <div class="flex-shrink-0 w-14 h-14 rounded-full bg-accent/80 flex items-center justify-center"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-dollar-sign h-7 w-7 text-gray-300" aria-hidden="true">
+                            <line x1="12" x2="12" y1="2" y2="22"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg></div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-secondary-foreground mb-1">100% Money Back Guarantee</h3>
+                        <p class="text-sm text-secondary-foreground/80">Risk-free learning experience</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left animate-fade-in"
+                    style="animation-delay: 0.2s;">
+                    <div class="flex-shrink-0 w-14 h-14 rounded-full bg-accent/80 flex items-center justify-center"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-headphones h-7 w-7 text-gray-300" aria-hidden="true">
+                            <path
+                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
+                            </path>
+                        </svg></div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-secondary-foreground mb-1">24 x 7 Support</h3>
+                        <p class="text-sm text-secondary-foreground/80">Get help whenever you need it</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- <app-product-list></app-product-list> -->
+<app-course-list [popularCourse]="false"></app-course-list>
+<app-why-choose-us></app-why-choose-us>
+<app-our-experts></app-our-experts>
+   
+</main>
