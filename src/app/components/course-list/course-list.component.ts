@@ -15,9 +15,18 @@ export class CourseListComponent implements OnInit {
   constructor(private http: HttpClient, private seoService: SeoService, private router: Router) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('assets/courses/course.json').subscribe(data => {
-      this.courses = data;
+    const courseFiles = [
+      'assets/courses/cyber-security.json',
+      'assets/courses/identity.json',
+      'assets/courses/access-management.json'
+    ];
+
+    courseFiles.forEach(file => {
+      this.http.get<any[]>(file).subscribe(data => {
+        this.courses = [...this.courses, ...data.slice(0, 4)];
+      });
     });
+
     this.seoService.updateTitle('Course List');
     this.seoService.updateMetaTags({
       title: 'professional course, professional courses, online training, online training courses, certification courses, certification courses online',
@@ -30,6 +39,9 @@ export class CourseListComponent implements OnInit {
     });
   }
     viewProduct(course: any) {
-    this.router.navigate(['/course-description'], { state: { course } });
+    this.router.navigate(['/course-description'], { state: { course } })
+     .then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 }

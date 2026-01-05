@@ -20,6 +20,7 @@ export class CourseDetailsComponent implements OnInit {
   ngOnInit() {
     // Get course data from navigation state
     this.course = window.history.state.course;
+     window.scrollTo({ top: 0, behavior: 'smooth' });
     
     if (!this.course) {
       // Redirect back if no course data
