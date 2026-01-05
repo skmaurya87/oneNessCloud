@@ -1,0 +1,244 @@
+[
+  {
+    "id": 1,
+    "level": "Intermediate",
+    "badge": "Popular",
+    "title": "CEH v13 AI Certification Training",
+    "description": "Learn ethical hacking with AI-powered cybersecurity tools to identify vulnerabilities and secure modern IT infrastructures.",
+    "duration_weeks": 10,
+    "students_enrolled": 3200,
+    "rating": 4.8,
+    "reviews": 520,
+    "img": "assets/images/ceh-v13-ai.jpg",
+    "fees": 499,
+    "heading1": "CEH v13 AI Key Features",
+    "features": [
+      "EC-Council Authorized Training",
+      "AI-driven Ethical Hacking Techniques",
+      "Hands-on Labs & Real Attack Simulations",
+      "Instructor-Led Sessions",
+      "Certification Exam Preparation",
+      "24x7 LMS Access"
+    ],
+    "heading2": "CEH v13 AI Course Overview",
+    "Overview": [
+      "CEH v13 AI blends ethical hacking fundamentals with artificial intelligence.",
+      "The course prepares learners for real-world penetration testing and global certification."
+    ],
+    "cta": "Learn More"
+  },
+  {
+    "id": 2,
+    "level": "Beginner",
+    "badge": "Foundation",
+    "title": "CompTIA Security+ Certification Training",
+    "description": "Build strong cybersecurity fundamentals including network security, threats, vulnerabilities, and risk management.",
+    "duration_weeks": 8,
+    "students_enrolled": 2800,
+    "rating": 4.7,
+    "reviews": 410,
+    "img": "assets/images/security-plus.jpg",
+    "fees": 349,
+    "heading1": "Security+ Training Key Features",
+    "features": [
+      "Globally Recognized CompTIA Certification",
+      "Beginner-Friendly Curriculum",
+      "Hands-on Security Labs",
+      "Threat & Risk Management",
+      "Exam Preparation Support",
+      "Lifetime LMS Access"
+    ],
+    "heading2": "Security+ Course Overview",
+    "Overview": [
+      "Security+ validates baseline cybersecurity skills.",
+      "Ideal for beginners entering the cybersecurity domain."
+    ],
+    "chapters": [{
+      "chapter": "Introduction to Cybersecurity",
+      "topics": [
+        "Understanding Cybersecurity Basics",
+        "Types of Cyber Threats",
+        "Cybersecurity Terminology"
+      ]
+    },
+    {
+      "chapter": "Network Security Fundamentals",
+      "topics": [
+        "Network Protocols and Architecture",
+        "Firewalls and VPNs",
+        "Intrusion Detection and Prevention Systems"
+      ]
+    }
+
+    ],
+    "cta": "Learn More"
+  },
+  {
+    "id": 3,
+    "level": "Advanced",
+    "badge": "Top Rated",
+    "title": "CISSP Certification Training",
+    "description": "Become a cybersecurity leader by mastering enterprise-level security architecture and governance.",
+    "duration_weeks": 12,
+    "students_enrolled": 2100,
+    "rating": 4.9,
+    "reviews": 380,
+    "img": "assets/images/cissp.jpg",
+    "fees": 699,
+    "heading1": "CISSP Training Key Features",
+    "features": [
+      "ISC² Official Curriculum",
+      "Security Leadership Focus",
+      "Comprehensive Domain Coverage",
+      "Risk & Compliance Scenarios",
+      "Expert Instructors",
+      "Exam-Oriented Learning"
+    ],
+    "heading2": "CISSP Course Overview",
+    "Overview": [
+      "CISSP is designed for experienced security professionals.",
+      "It focuses on architecture, governance, and risk management."
+    ],
+    "cta": "Learn More"
+  },
+  {
+    "id": 4,
+    "level": "Advanced",
+    "badge": "Management",
+    "title": "CISM Certification Training",
+    "description": "Learn how to manage, design, and govern enterprise information security programs.",
+    "duration_weeks": 10,
+    "students_enrolled": 1750,
+    "rating": 4.7,
+    "reviews": 290,
+    "img": "assets/images/cism.jpg",
+    "fees": 599,
+    "heading1": "CISM Training Key Features",
+    "features": [
+      "ISACA-aligned Curriculum",
+      "Security Governance & Risk",
+      "Enterprise Security Strategy",
+      "Case-based Learning",
+      "Exam Preparation",
+      "Leadership Skill Development"
+    ],
+    "heading2": "CISM Course Overview",
+    "Overview": [
+      "CISM focuses on managing information security programs.",
+      "Best suited for security managers and leaders."
+    ],
+    "cta": "Learn More"
+  },
+  {
+    "id": 5,
+    "level": "Advanced",
+    "badge": "Audit",
+    "title": "CISA Certification Training",
+    "description": "Develop expertise in auditing, controlling, and assuring information systems.",
+    "duration_weeks": 9,
+    "students_enrolled": 1650,
+    "rating": 4.6,
+    "reviews": 260,
+    "img": "assets/images/cisa.jpg",
+    "fees": 549,
+    "heading1": "CISA Training Key Features",
+    "features": [
+      "ISACA Official Curriculum",
+      "Information Systems Auditing",
+      "Risk Assessment & Control",
+      "Compliance Management",
+      "Exam-focused Training",
+      "Professional Case Studies"
+    ],
+    "heading2": "CISA Course Overview",
+    "Overview": [
+      "CISA focuses on auditing and assurance of IT systems.",
+      "Ideal for auditors and compliance professionals."
+    ],
+    "cta": "Learn More"
+  },
+  {
+    "id": 6,
+    "level": "Intermediate",
+    "badge": "Hands-on",
+    "title": "SOC Analyst Hands-on Training",
+    "description": "Gain real-world experience in security operations, monitoring, and incident response.",
+    "duration_weeks": 9,
+    "students_enrolled": 2400,
+    "rating": 4.6,
+    "reviews": 360,
+    "img": "assets/images/soc-analyst.jpg",
+    "fees": 449,
+    "heading1": "SOC Analyst Training Key Features",
+    "features": [
+      "Live SOC Simulations",
+      "SIEM & Log Analysis",
+      "Incident Response Techniques",
+      "Threat Detection Labs",
+      "Blue Team Skills",
+      "Job-focused Curriculum"
+    ],
+    "heading2": "SOC Analyst Course Overview",
+    "Overview": [
+      "This course prepares learners for real-world SOC environments.",
+      "Focuses on detection, analysis, and response."
+    ],
+    "cta": "Learn More"
+  },
+  {
+    "id": 7,
+    "level": "Advanced",
+    "badge": "Specialized",
+    "title": "Advanced Penetration Testing Training",
+    "description": "Master advanced penetration testing and red team techniques used by professionals.",
+    "duration_weeks": 10,
+    "students_enrolled": 1600,
+    "rating": 4.8,
+    "reviews": 270,
+    "img": "assets/images/advanced-pentest.jpg",
+    "fees": 549,
+    "heading1": "Advanced Pentesting Key Features",
+    "features": [
+      "Real-world Exploitation Techniques",
+      "Red Team Methodologies",
+      "Web, Network & Cloud Attacks",
+      "Advanced Tools",
+      "Hands-on Labs",
+      "Practical Assessments"
+    ],
+    "heading2": "Advanced Pentesting Course Overview",
+    "Overview": [
+      "Focuses on real-world attack simulation.",
+      "Designed for experienced penetration testers."
+    ],
+    "cta": "Learn More"
+  },
+  {
+    "id": 8,
+    "level": "Advanced",
+    "badge": "Incident Response",
+    "title": "Advanced Cyber Threat Hunting & DFIR Training",
+    "description": "Learn proactive threat hunting and digital forensics to respond to advanced cyber incidents.",
+    "duration_weeks": 10,
+    "students_enrolled": 1400,
+    "rating": 4.7,
+    "reviews": 230,
+    "img": "assets/images/threat-hunting-dfir.jpg",
+    "fees": 599,
+    "heading1": "Threat Hunting & DFIR Key Features",
+    "features": [
+      "Proactive Threat Hunting",
+      "Digital Forensics & IR",
+      "Malware & Memory Analysis",
+      "Real Incident Case Studies",
+      "Advanced Security Tools",
+      "Hands-on Labs"
+    ],
+    "heading2": "Threat Hunting & DFIR Course Overview",
+    "Overview": [
+      "This course focuses on detecting hidden threats.",
+      "Covers forensic investigation and incident response."
+    ],
+    "cta": "Learn More"
+  }
+]
