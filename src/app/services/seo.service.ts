@@ -53,7 +53,7 @@ export class SeoService {
       document.head.appendChild(link);
     }
 
-    this.meta.updateTag({ property: 'og:url', content: `https://shrijanscaffolding.com${this.router.url}` });
+    this.meta.updateTag({ property: 'og:url', content: `https://onenesscloud.com/${this.router.url}` });
   }
 
   createProductSchema(product: any) {
@@ -63,15 +63,15 @@ export class SeoService {
       "@context": "https://schema.org/",
       "@type": "Product",
       "name": product.name,
-      "image": `https://shrijanscaffolding.com/${product.image}`,
+      "image": `https://onenesscloud.com//${product.image}`,
       "description": product.description,
       "brand": {
         "@type": "Brand",
-        "name": "ShrijanScaffolding Towers"
+        "name": "One Ness Cloud"
       },
       "offers": {
         "@type": "Offer",
-        "url": `https://shrijanscaffolding.com/product-description`,
+        "url": `https://onenesscloud.com/course-description`,
         "priceCurrency": "INR",
         "price": product.price,
         "availability": "https://schema.org/InStock"
