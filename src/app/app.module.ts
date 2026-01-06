@@ -17,6 +17,7 @@ import { CourseListComponent } from './components/course-list/course-list.compon
 import { HttpClientModule } from '@angular/common/http';
 import { WhyChooseUsComponent } from './components/why-choose-us/why-choose-us.component';
 import { OurExpertsComponent } from './components/our-experts/our-experts.component';
+import { CoursesComponent } from './courses/courses.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { OurExpertsComponent } from './components/our-experts/our-experts.compon
     FooterComponent,
     CourseListComponent,
     WhyChooseUsComponent,
-    OurExpertsComponent
+    OurExpertsComponent,
+    CoursesComponent
 
   ],
   imports: [

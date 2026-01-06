@@ -1,88 +1,42 @@
-<section class="py-12 md:py-12">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12 animate-fade-in">
-            <h2 class="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">Cyber Security Courses</h2>
-            <div class="w-20 h-1 bg-accent mx-auto rounded-full"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <div class="animate-fade-in" style="animation-delay: 0s;" *ngFor="let course of courses.slice(0, 4)">
-                <div
-                    class="rounded-xl border text-card-foreground shadow h-full flex flex-col card-hover-effect border-card-border bg-card group">
-                    <div class="flex flex-col space-y-1.5 p-6">
-                        <div class="flex items-start justify-between mb-3">
-                            <div
-                                class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-accent/10 text-accent hover:bg-accent/20">
-                                {{ course.level }}</div>
-                            <div *ngIf="course?.badge"
-                                class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent shadow hover:bg-primary/80 bg-success text-success-foreground">
-                                {{ course?.badge }}</div>
-                        </div>
-                        <div
-                            class="font-semibold tracking-tight text-xl font-display group-hover:text-primary transition-colors">
-                            {{ course.title }}</div>
-                        <div class="text-sm text-muted-foreground mt-2 leading-relaxed">{{ course.description }}</div>
-                    </div>
-                    <div class="p-6 pt-0 flex-grow">
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-2 text-sm text-muted-foreground">
-                                <i class="fa-regular fa-clock text-primary"></i>
-                                <span>{{ course.duration_weeks }} weeks</span>
-                            </div>
-                            <div class="flex items-center gap-2 text-sm text-muted-foreground">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-users h-4 w-4 text-primary"
-                                    aria-hidden="true">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                    <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
-                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                </svg><span>{{ course.students_enrolled }} students enrolled</span>
-                            </div>
-                            <div class="flex items-center gap-2 text-sm">
-                                <i class="fas fa-star fill-yellow-400 text-yellow-400"></i>
-                                <span class="font-semibold">{{ course.rating }}</span>
-                                <span class="text-muted-foreground">({{ course.reviews }})</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-6 pt-0 mt-auto">
-                        <button (click)="viewProduct(course)"
-                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-9 px-4 py-2 w-full bg-primary hover:bg-primary-light text-primary-foreground group/btn">Learn
-                            More <i
-                                class="fas fa-arrow-right  group-hover/btn:translate-x-1 transition-transform"></i></button>
-                    </div>
-                </div>
+<section [ngClass]="showHeading ? 'py-12 md:py-12':'py-0'">
+    <div class="container mx-auto">
+        <!-- Loop through each category -->
+        <div *ngFor="let category of courseCategories; let categoryIndex = index" 
+             [ngClass]="categoryIndex > 0 ? 'mt-16' : ''">
+            <!-- Category Heading (if enabled) -->
+            <div class="text-center mb-8 animate-fade-in" *ngIf="showCategoryHeadings">
+                <h3 class="text-2xl md:text-3xl font-display font-bold text-foreground mb-3">
+                    {{ category.name }} Courses
+                </h3>
+                <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
             </div>
-        </div>
-    </div>
-</section>
-<!-- ===========Trending IT Courses=============== -->
-<section class="py-12 md:py-12">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12 animate-fade-in">
-            <h2 class="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">Access Management Courses</h2>
-            <div class="w-20 h-1 bg-accent mx-auto rounded-full"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <div class="animate-fade-in" style="animation-delay: 0s;" *ngFor="let course of courses.slice(4, 8)">
-                <div
-                    class="rounded-xl border text-card-foreground shadow h-full flex flex-col card-hover-effect border-card-border bg-card group">
-                    <div class="flex flex-col space-y-1.5 p-6">
-                        <div class="flex items-start justify-between mb-3">
-                            <div
-                                class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-accent/10 text-accent hover:bg-accent/20">
-                                {{ course.level }}</div>
-                            <div *ngIf="course?.badge"
-                                class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent shadow hover:bg-primary/80 bg-success text-success-foreground">
-                                {{ course?.badge }}</div>
+            <!-- Course Grid -->
+            <div class="grid gap-6 lg:gap-8" 
+                 [ngClass]="grid ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'">
+                <div class="animate-fade-in" 
+                     [style.animation-delay]="'0.' + (i % 4) + 's'" 
+                     *ngFor="let course of category.courses; let i = index">
+                    <div class="rounded-xl border text-card-foreground shadow h-full flex flex-col card-hover-effect border-card-border bg-card group">
+                        
+                        <!-- Course Header -->
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-accent/10 text-accent hover:bg-accent/20">
+                                    {{ course.level }}
+                                </div>
+                                <div *ngIf="course?.badge"
+                                    class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent shadow hover:bg-primary/80 bg-success text-success-foreground">
+                                    {{ course?.badge }}
+                                </div>
+                            </div>
+                            <div class="font-semibold tracking-tight text-xl font-display group-hover:text-primary transition-colors">
+                                {{ course.title }}
+                            </div>
+                            <div class="text-sm text-muted-foreground mt-2 leading-relaxed">
+                                {{ course.description }}
+                            </div>
                         </div>
-                        <div
-                            class="font-semibold tracking-tight text-xl font-display group-hover:text-primary transition-colors">
-                            {{ course.title }}</div>
-                        <div class="text-sm text-muted-foreground mt-2 leading-relaxed">{{ course.description }}</div>
-                    </div>
-                    <div class="p-6 pt-0 flex-grow">
+                        <!-- Course Details -->
                         <div class="p-6 pt-0 flex-grow">
                             <div class="space-y-3">
                                 <div class="flex items-center gap-2 text-sm text-muted-foreground">
@@ -98,7 +52,8 @@
                                         <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
                                         <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                                         <circle cx="9" cy="7" r="4"></circle>
-                                    </svg><span>{{ course.students_enrolled }} students enrolled</span>
+                                    </svg>
+                                    <span>{{ course.students_enrolled }} students enrolled</span>
                                 </div>
                                 <div class="flex items-center gap-2 text-sm">
                                     <i class="fas fa-star fill-yellow-400 text-yellow-400"></i>
@@ -107,110 +62,17 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="flex items-center p-6 pt-0 mt-auto">
-                        <button (click)="viewProduct(course)"
-                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-9 px-4 py-2 w-full bg-primary hover:bg-primary-light text-primary-foreground group/btn">Learn
-                            More <i
-                                class="fas fa-arrow-right  group-hover/btn:translate-x-1 transition-transform"></i></button>
+                        <!-- Course Action Button -->
+                        <div class="flex items-center p-6 pt-0 mt-auto">
+                            <button (click)="viewProduct(course)"
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-9 px-4 py-2 w-full bg-primary hover:bg-primary-light text-primary-foreground group/btn">
+                                Learn More 
+                                <i class="fas fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- ==============Popular IT Courses============= -->
-<section class="py-12 md:py-12">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12 animate-fade-in">
-            <h2 class="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">Identity Courses</h2>
-            <div class="w-20 h-1 bg-accent mx-auto rounded-full"></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <div class="animate-fade-in" style="animation-delay: 0s;" *ngFor="let course of courses.slice(8, 12)">
-                <div
-                    class="rounded-xl border text-card-foreground shadow h-full flex flex-col card-hover-effect border-card-border bg-card group">
-                    <div class="flex flex-col space-y-1.5 p-6">
-                        <div class="flex items-start justify-between mb-3">
-                            <div
-                                class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-accent/10 text-accent hover:bg-accent/20">
-                                {{ course.level }}</div>
-                            <div *ngIf="course?.badge"
-                                class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent shadow hover:bg-primary/80 bg-success text-success-foreground">
-                                {{ course?.badge }}</div>
-                        </div>
-                        <div
-                            class="font-semibold tracking-tight text-xl font-display group-hover:text-primary transition-colors">
-                            {{ course.title }}</div>
-                        <div class="text-sm text-muted-foreground mt-2 leading-relaxed">{{ course.description }}</div>
-                    </div>
-                    <div class="p-6 pt-0 flex-grow">
-                        <div class="p-6 pt-0 flex-grow">
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-2 text-sm text-muted-foreground">
-                                    <i class="fa-regular fa-clock text-primary"></i>
-                                    <span>{{ course.duration_weeks }} weeks</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-sm text-muted-foreground">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-users h-4 w-4 text-primary"
-                                        aria-hidden="true">
-                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                        <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
-                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                        <circle cx="9" cy="7" r="4"></circle>
-                                    </svg><span>{{ course.students_enrolled }} students enrolled</span>
-                                </div>
-                                <div class="flex items-center gap-2 text-sm">
-                                    <i class="fas fa-star fill-yellow-400 text-yellow-400"></i>
-                                    <span class="font-semibold">{{ course.rating }}</span>
-                                    <span class="text-muted-foreground">({{ course.reviews }})</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-center p-6 pt-0 mt-auto">
-                        <button (click)="viewProduct(course)"
-                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-9 px-4 py-2 w-full bg-primary hover:bg-primary-light text-primary-foreground group/btn">Learn
-                            More
-                            <i class="fas fa-arrow-right  group-hover/btn:translate-x-1 transition-transform"></i>
-                        </button></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<!-- <div class="course-container">
-<div class="course-card" *ngFor="let course of courses">
-
-<img [src]="course.img" alt="{{ course.title }}" />
-
-<h3>{{ course.title }}</h3>
-<p class="level">{{ course.level }}</p>
-<p class="description">{{ course.description }}</p>
-
-<p><strong>Duration:</strong> {{ course.duration_weeks }} weeks</p>
-<p><strong>Students:</strong> {{ course.students_enrolled }}</p>
-<p><strong>Rating:</strong> ⭐ {{ course.rating }} ({{ course.reviews }} reviews)</p>
-
-<h4>{{ course.heading1 }}</h4>
-<ul>
-<li *ngFor="let feature of course.features">
-{{ feature }}
-</li>
-</ul>
-
-<h4>{{ course.heading2 }}</h4>
-<p *ngFor="let text of course.Overview">
-{{ text }}
-</p>
-
-<p class="price">₹{{ course.fees }}</p>
-
-<button>{{ course.cta }}</button>
-</div>
-</div> -->

@@ -45,6 +45,6 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/course-list']);
+    this.router.navigate(['/courses']);
   }
 }

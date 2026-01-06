@@ -13,7 +13,7 @@
                     technologies with industry experts. Get certified, build real-world projects, and accelerate your IT
                     career with our comprehensive training programs.</p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <button [routerLink]="['/course-list']"
+                    <button [routerLink]="['/courses']"
                         class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 rounded-md px-8 bg-accent hover:bg-accent-hover text-accent-foreground font-semibold shadow-lg btn-hover-lift group">Explore
                         all Courses<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -89,7 +89,7 @@
     </section>
 
 <!-- <app-product-list></app-product-list> -->
-<app-course-list [popularCourse]="false"></app-course-list>
+<app-course-list [limitPerCategory]="4" [showHeading]="true" [showCategoryHeadings]="true"></app-course-list>
 <app-why-choose-us></app-why-choose-us>
 <app-our-experts></app-our-experts>
    

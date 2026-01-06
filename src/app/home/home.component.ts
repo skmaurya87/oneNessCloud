@@ -9,14 +9,17 @@ import { SeoService } from '../services/seo.service';
   encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
+
+courses: any[] = [];
+
   constructor(private seoService: SeoService) {}
 
   ngOnInit() {
     this.seoService.updateMetaTags({
-      title: 'ShrijanScaffolding Towers - Best Aluminium Scaffolding in Pratapgarh | Premium Quality',
-      description: 'Leading scaffolding supplier in Pratapgarh, UP. Rent aluminium scaffolding, mobile towers, industrial ladders. 15+ years experience, ISO certified, 24/7 support. Call +91-8416839999',
-      keywords: 'scaffolding Pratapgarh, aluminium scaffolding rental, mobile scaffolding towers UP, industrial ladders, scaffolding supplier Pratapgarh, construction equipment rental',
-      canonical: 'https://shrijanscaffolding.com'
+      title: 'One Ness Cloud - Professional IT Certifications Training and Courses Online',
+      description: 'professional course, professional courses, online training, online training courses, certification courses, certification courses online',
+      keywords: 'professional course, professional courses, online training, online training courses, certification courses, certification courses online',
+      canonical: 'https://onenesscloud.com/'
     });
   }
 
