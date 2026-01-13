@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "level": "Beginner",
+    "badge": "Popular",
+    "title": "Identity & Access Management",
+    "description": "Master Amazon Web Services fundamentals and become cloud-certified with hands-on labs and real-world projects.",
+    "duration_weeks": 8,
+    "students_enrolled": 2450,
+    "rating": 4.8,
+    "reviews": 340,
+    "img": "assets/images/AWS-Cloud-Practitioner.jpg",
+    "fees": 199,
+    "heading1": "AWS Cloud Training Key Features",
+    "features": [
+      "Experienced & Certified AWS Trainers",
+      "Hands-on Labs with Real AWS Services",
+      "Small Batch Size for Better Learning",
+      "Flexible Weekday & Weekend Batches",
+      "24x7 Lifetime Support & LMS Access",
+      "Instructor-Led Training : 35 Hours"
+    ],
+    "heading2": "AWS Cloud Practitioner Course Overview",
+    "Overview": [
+      "The AWS Cloud Practitioner course provides a foundational understanding of Amazon Web Services, cloud concepts, security, pricing models, and core AWS services.",
+      "This course is designed for beginners who want to start a career in cloud computing and prepare for AWS certification."
+    ],
+    "cta": "Learn More"
+  }
+]
