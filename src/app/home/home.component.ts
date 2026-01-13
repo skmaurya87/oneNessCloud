@@ -1,5 +1,4 @@
 import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 import { SeoService } from '../services/seo.service';
 
 @Component({
@@ -10,7 +9,6 @@ import { SeoService } from '../services/seo.service';
 })
 export class HomeComponent implements OnInit {
 
-courses: any[] = [];
 
   constructor(private seoService: SeoService) {}
 
@@ -22,6 +20,7 @@ courses: any[] = [];
       canonical: 'https://onenesscloud.com/'
     });
   }
+  
 
 
 }

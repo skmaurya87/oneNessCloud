@@ -1,0 +1,12 @@
+ <div class="container mx-auto py-16 md:py-20">    
+    <div class="text-center mb-8 animate-fade-in">
+        <h3 class="text-2xl md:text-3xl font-display font-bold text-foreground mb-3">Explore Courses by Category</h3>
+        <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+    </div>
+
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide *ngFor="let course of courses">
+        <img [src]="'assets/images/partners/' + course + '.png'" [alt]="course" style="max-width: 100%;">
+  </ng-template>
+</owl-carousel-o>
+ </div>

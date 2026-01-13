@@ -316,3 +316,14 @@ body {
         border-color: hsl(var(--secondary));
     }
 }
+
+.owl-item{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.owl-carousel .owl-item img {
+    display: block;
+    width: auto !important;
+}

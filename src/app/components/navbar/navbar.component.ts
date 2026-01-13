@@ -1,4 +1,14 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonService } from 'src/app/services/common.service';
+
+interface CategoryIndex {
+  icon: string;
+  name: string;
+  file: string;
+  displayOrder: number;
+  description: string;
+}
 
 interface MenuItem {
   label: string;
@@ -6,6 +16,7 @@ interface MenuItem {
   hasDropdown?: boolean;
   submenu?: MenuItem[];
   mobileOpenKey?: string;
+  isDynamic?: boolean;
 }
 
 @Component({
@@ -18,6 +29,7 @@ export class NavbarComponent {
   iconChange: boolean = false;
   isMobileMenuOpen: boolean = false;
   mobileSubmenuStates: { [key: string]: boolean } = {};
+  categories: CategoryIndex[] = [];
 
   // Menu Configuration - Edit this to add/remove/reorder menu items
   menuItems: MenuItem[] = [
@@ -26,12 +38,8 @@ export class NavbarComponent {
       routerLink: 'courses',
       hasDropdown: true,
       mobileOpenKey: 'courses',
-      submenu: [
-        { label: 'Cyber Security', routerLink: 'courses?category=Cyber%20Security' },
-        { label: 'Access Management', routerLink: 'courses?category=Access%20Management' },
-        { label: 'Identity Management', routerLink: 'courses?category=Identity%20Management' },
-        { label: 'Microsoft', routerLink: 'courses?category=Microsoft' },
-      ]
+      isDynamic: true,  // This menu will be populated dynamically
+      submenu: []  // Will be filled from courses-index.json
     },
     {
       label: 'About Us',
@@ -69,13 +77,51 @@ export class NavbarComponent {
     }
   ];
 
-  constructor(private el: ElementRef) {}
+  constructor(
+    private el: ElementRef,
+    private router: Router,
+    private commonService: CommonService
+  ) {}
   ngOnInit(): void {
     // Initialize mobile submenu states
     this.menuItems.forEach(item => {
       if (item.mobileOpenKey) {
         this.mobileSubmenuStates[item.mobileOpenKey] = false;
       }
+    });
+
+    // Load dynamic categories from courses-index.json
+    this.loadCategories();
+  }
+
+  loadCategories(): void {
+    this.commonService.getCategoryIndex().subscribe(
+      (data: any) => {
+        this.categories = data.categories.sort((a: CategoryIndex, b: CategoryIndex) => 
+          a.displayOrder - b.displayOrder
+        );
+        
+        // Update the 'Our Courses' menu with dynamic categories
+        const coursesMenu = this.menuItems.find(item => item.isDynamic);
+        if (coursesMenu) {
+          coursesMenu.submenu = this.categories.map(cat => ({
+            label: cat.name,
+            routerLink: ''  // We'll use click handler instead
+          }));
+        }
+      },
+      (error) => {
+        console.error('Error loading categories:', error);
+      }
+    );
+  }
+
+  navigateToCategory(category: CategoryIndex): void {
+    this.router.navigate(['/courses'], { 
+      queryParams: { category: category.name } 
+    }).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      this.closeMobileMenu();
     });
   }
 

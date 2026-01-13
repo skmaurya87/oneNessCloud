@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { WhyChooseUsComponent } from './components/why-choose-us/why-choose-us.component';
 import { OurExpertsComponent } from './components/our-experts/our-experts.component';
 import { CoursesComponent } from './courses/courses.component';
+import { OurPartnersComponent } from './components/our-partners/our-partners.component';
+import { OurClientsComponent } from './components/our-clients/our-clients.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,9 @@ import { CoursesComponent } from './courses/courses.component';
     CourseListComponent,
     WhyChooseUsComponent,
     OurExpertsComponent,
-    CoursesComponent
+    CoursesComponent,
+    OurPartnersComponent,
+    OurClientsComponent
 
   ],
   imports: [

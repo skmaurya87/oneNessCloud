@@ -41,13 +41,27 @@
             </a>
             <!-- Dropdown Menu -->
             <div class="absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400">
-              <a *ngFor="let subitem of item.submenu; let first = first; let last = last" 
-                 [routerLink]="subitem.routerLink" 
-                 class="block px-4 py-3 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-400"
-                 [class.first:rounded-t-lg]="first"
-                 [class.last:rounded-b-lg]="last">
-                {{ subitem.label }}
-              </a>
+              <!-- Dynamic Categories (for Our Courses menu) -->
+              <ng-container *ngIf="item.isDynamic">
+                <a *ngFor="let category of categories; let first = first; let last = last" 
+                   (click)="navigateToCategory(category)"
+                   class="block px-4 py-3 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-400 cursor-pointer"
+                   [class.first:rounded-t-lg]="first"
+                   [class.last:rounded-b-lg]="last">
+                  {{ category.name }}
+                </a>
+              </ng-container>
+              
+              <!-- Static Menu Items -->
+              <ng-container *ngIf="!item.isDynamic">
+                <a *ngFor="let subitem of item.submenu; let first = first; let last = last" 
+                   [routerLink]="subitem.routerLink" 
+                   class="block px-4 py-3 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-400"
+                   [class.first:rounded-t-lg]="first"
+                   [class.last:rounded-b-lg]="last">
+                  {{ subitem.label }}
+                </a>
+              </ng-container>
             </div>
           </div>
 
@@ -98,12 +112,24 @@
             </svg>
           </div>
           <div *ngIf="mobileSubmenuStates[item.mobileOpenKey!]" class="pl-4 flex flex-col gap-2 mt-2 animate-fade-in">
-            <a *ngFor="let subitem of item.submenu" 
-               (click)="closeMobileMenu()" 
-               [routerLink]="subitem.routerLink"
-               class="text-foreground/80 hover:text-primary text-sm transition-all duration-400 py-1.5">
-              {{ subitem.label }}
-            </a>
+            <!-- Dynamic Categories (for Our Courses menu) -->
+            <ng-container *ngIf="item.isDynamic">
+              <a *ngFor="let category of categories" 
+                 (click)="navigateToCategory(category)"
+                 class="text-foreground/80 hover:text-primary text-sm transition-all duration-400 py-1.5 cursor-pointer">
+                {{ category.name }}
+              </a>
+            </ng-container>
+            
+            <!-- Static Menu Items -->
+            <ng-container *ngIf="!item.isDynamic">
+              <a *ngFor="let subitem of item.submenu" 
+                 (click)="closeMobileMenu()" 
+                 [routerLink]="subitem.routerLink"
+                 class="text-foreground/80 hover:text-primary text-sm transition-all duration-400 py-1.5">
+                {{ subitem.label }}
+              </a>
+            </ng-container>
           </div>
         </div>
 

@@ -27,6 +27,34 @@
       "file": "microsoft.json",
       "displayOrder": 4,
       "description": "Microsoft Azure and other microsoft training programs"
+    },
+    {
+      "icon":  "fa-solid fa-cloud",  
+      "name": "Cloud Computing",
+      "file": "cloud-computing.json",
+      "displayOrder": 5,
+      "description": "Comprehensive cloud computing courses"
+    },
+    {
+      "icon":  "fa-solid fa-code",  
+      "name": "Programming",
+      "file": "programming.json",
+      "displayOrder": 6,
+      "description": "Learn programming languages and software development"
+    },
+    {
+      "icon":  "fa-solid fa-network-wired",  
+      "name": "Networking",
+      "file": "networking.json",
+      "displayOrder": 7,
+      "description": "Networking fundamentals and advanced concepts"
+    },
+    {
+      "icon":  "fa-solid fa-bezier-curve",  
+      "name": "UI UX Design",
+      "file": "ui-ux-design.json",
+      "displayOrder": 8,
+      "description": "UI UX design principles and tools"
     }
   ]
 }
