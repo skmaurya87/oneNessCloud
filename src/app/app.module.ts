@@ -20,7 +20,7 @@ import { OurExpertsComponent } from './components/our-experts/our-experts.compon
 import { CoursesComponent } from './courses/courses.component';
 import { OurPartnersComponent } from './components/our-partners/our-partners.component';
 import { OurClientsComponent } from './components/our-clients/our-clients.component';
-
+import { provideSweetAlert2 } from '@sweetalert2/ngx-sweetalert2';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,9 +45,13 @@ import { OurClientsComponent } from './components/our-clients/our-clients.compon
     AppRoutingModule,
     CarouselModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+  
   ],
-  providers: [SeoService],
+  providers: [
+    SeoService,
+    provideSweetAlert2()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

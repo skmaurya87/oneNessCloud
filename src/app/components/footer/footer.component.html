@@ -48,31 +48,24 @@
                     <li><a routerLink="courses"
                             class="text-primary-foreground/80 hover:text-accent transition-colors">Courses</a></li>
                     <li><a routerLink="instructors"
-                            class="text-primary-foreground/80 hover:text-accent transition-colors">Instructors</a></li>
-                    <li><a routerLink="blog" class="text-primary-foreground/80 hover:text-accent transition-colors">Blog</a>
+                            class="text-primary-foreground/80 hover:text-accent transition-colors">Our Clients</a></li>
+                    <li><a routerLink="blog" class="text-primary-foreground/80 hover:text-accent transition-colors">Leadership</a>
                     </li>
                     <li><a routerLink="career"
-                            class="text-primary-foreground/80 hover:text-accent transition-colors">Career</a></li>
+                            class="text-primary-foreground/80 hover:text-accent transition-colors">Partners</a></li>
                     <li><a routerLink="contact"
-                            class="text-primary-foreground/80 hover:text-accent transition-colors">Contact</a></li>
+                            class="text-primary-foreground/80 hover:text-accent transition-colors">Happiness Guarantee</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-lg font-semibold mb-4">Popular Courses</h4>
                 <ul class="space-y-2">
-                    <li><a routerLink="courses" class="text-primary-foreground/80 hover:text-accent transition-colors">Cloud
-                            Computing</a></li>
-                    <li><a routerLink="courses" class="text-primary-foreground/80 hover:text-accent transition-colors">Data
-                            Science</a></li>
-                    <li><a routerLink="courses"
-                            class="text-primary-foreground/80 hover:text-accent transition-colors">Cybersecurity</a>
+                    <li *ngFor="let category of categories">
+                        <a (click)="navigateToCategory(category)" 
+                           class="text-primary-foreground/80 hover:text-accent transition-colors cursor-pointer">
+                            {{ category.name }}
+                        </a>
                     </li>
-                    <li><a routerLink="courses" class="text-primary-foreground/80 hover:text-accent transition-colors">Web
-                            Development</a></li>
-                    <li><a routerLink="courses" class="text-primary-foreground/80 hover:text-accent transition-colors">DevOps</a>
-                    </li>
-                    <li><a routerLink="courses" class="text-primary-foreground/80 hover:text-accent transition-colors">AI &amp;
-                            ML</a></li>
                 </ul>
             </div>
             <div>
