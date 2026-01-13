@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CommonService } from '../services/common.service';
 
 @Component({
@@ -10,16 +11,28 @@ export class CoursesComponent implements OnInit {
   categories: string[] = [];
   selectedCategory: string | null = null;
 
-  constructor(private commonService: CommonService) {}
+  constructor(
+    private commonService: CommonService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.commonService.getCategories().subscribe(
       (data) => {
         this.categories = data;
-        // Set first category as default
-        if (this.categories.length > 0) {
-          this.selectedCategory = this.categories[0];
-        }
+        
+        // Check for category query parameter
+        this.route.queryParams.subscribe(params => {
+          const categoryParam = params['category'];
+          
+          if (categoryParam && this.categories.includes(categoryParam)) {
+            // Set the category from query param if it exists
+            this.selectedCategory = categoryParam;
+          } else if (this.categories.length > 0) {
+            // Otherwise, set first category as default
+            this.selectedCategory = this.categories[0];
+          }
+        });
       },
       (error) => {
         console.error('Error loading categories:', error);

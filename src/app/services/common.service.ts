@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin, map, of, catchError } from 'rxjs';
+import { Observable, forkJoin, map, of, catchError, switchMap } from 'rxjs';
 
 export interface Course {
   id: number;
@@ -35,19 +35,41 @@ export interface CourseCategory {
 export class CommonService {
   private readonly COURSES_BASE_PATH = 'assets/courses/';
   
-  // List of course category files to auto-discover
-  // Add new files here to automatically include them
-  private readonly COURSE_FILES = [
-    'cyber-security.json',
-    'access-management.json',
-    'identity.json',
-    'it-courses.json'
-  ];
+  // Cache for category index to avoid multiple HTTP calls
+  private categoryIndexCache: any = null;
 
   constructor(private http: HttpClient) { }
 
   /**
-   * Converts filename to readable category name
+   * Load the category index from courses-index.json
+   * This is the single source of truth for all categories
+   */
+  getCategoryIndex(): Observable<any> {
+    if (this.categoryIndexCache) {
+      return of(this.categoryIndexCache);
+    }
+    return this.http.get<any>(`${this.COURSES_BASE_PATH}courses-index.json`).pipe(
+      map(data => {
+        this.categoryIndexCache = data;
+        return data;
+      })
+    );
+  }
+
+  /**
+   * Get category name by filename from the index
+   */
+  private getCategoryNameByFile(fileName: string): Observable<string> {
+    return this.getCategoryIndex().pipe(
+      map(data => {
+        const category = data.categories.find((cat: any) => cat.file === fileName);
+        return category ? category.name : this.fileNameToCategory(fileName);
+      })
+    );
+  }
+
+  /**
+   * Converts filename to readable category name (fallback)
    * Example: 'cyber-security.json' -> 'Cyber Security'
    */
   private fileNameToCategory(fileName: string): string {
@@ -59,41 +81,46 @@ export class CommonService {
   }
 
   /**
-   * Dynamically loads all course categories from JSON files.
-   * Each JSON file name becomes the category name.
-   * No code changes needed when adding new categories - just add filename to COURSE_FILES array.
+   * Dynamically loads all course categories from courses-index.json
+   * This ensures category names always match across the application
    */
   getAllCourses(limitPerCategory?: number): Observable<CourseCategory[]> {
-    const requests = this.COURSE_FILES.map((file, index) =>
-      this.http.get<Course[]>(`${this.COURSES_BASE_PATH}${file}`).pipe(
-        map(courses => {
-          const categoryName = this.fileNameToCategory(file);
-          const processedCourses = courses.map(course => ({
-            ...course,
-            category: categoryName
-          }));
-          return {
-            name: categoryName,
-            file: file,
-            displayOrder: index + 1,
-            courses: limitPerCategory 
-              ? processedCourses.slice(0, limitPerCategory) 
-              : processedCourses
-          } as CourseCategory;
-        }),
-        catchError(error => {
-          console.error(`Error loading ${file}:`, error);
-          return of({
-            name: this.fileNameToCategory(file),
-            file: file,
-            displayOrder: index + 1,
-            courses: []
-          } as CourseCategory);
-        })
+    return this.getCategoryIndex().pipe(
+      switchMap((indexData: any) => {
+        const categories = indexData.categories;
+        const requests: Observable<CourseCategory>[] = categories.map((category: any) =>
+          this.http.get<Course[]>(`${this.COURSES_BASE_PATH}${category.file}`).pipe(
+            map(courses => {
+              const processedCourses = courses.map(course => ({
+                ...course,
+                category: category.name
+              }));
+              return {
+                name: category.name,
+                file: category.file,
+                displayOrder: category.displayOrder,
+                courses: limitPerCategory 
+                  ? processedCourses.slice(0, limitPerCategory) 
+                  : processedCourses
+              } as CourseCategory;
+            }),
+            catchError(error => {
+              console.error(`Error loading ${category.file}:`, error);
+              return of({
+                name: category.name,
+                file: category.file,
+                displayOrder: category.displayOrder,
+                courses: []
+              } as CourseCategory);
+            })
+          )
+        );
+        return forkJoin(requests) as Observable<CourseCategory[]>;
+      }),
+      map((categories: CourseCategory[]) => 
+        categories.sort((a: CourseCategory, b: CourseCategory) => a.displayOrder - b.displayOrder)
       )
     );
-
-    return forkJoin(requests);
   }
 
   /**

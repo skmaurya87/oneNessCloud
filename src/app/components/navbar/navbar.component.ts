@@ -27,10 +27,10 @@ export class NavbarComponent {
       hasDropdown: true,
       mobileOpenKey: 'courses',
       submenu: [
-        { label: 'Identity Management', routerLink: 'courses/identity-management' },
-        { label: 'Microsoft', routerLink: 'courses/microsoft' },
-        { label: 'Cyber Security', routerLink: 'courses/cyber-security' },
-        { label: 'Access Management', routerLink: 'courses/access-management' },
+        { label: 'Cyber Security', routerLink: 'courses?category=Cyber%20Security' },
+        { label: 'Access Management', routerLink: 'courses?category=Access%20Management' },
+        { label: 'Identity Management', routerLink: 'courses?category=Identity%20Management' },
+        { label: 'Microsoft', routerLink: 'courses?category=Microsoft' },
       ]
     },
     {

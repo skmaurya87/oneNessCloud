@@ -1,28 +1,32 @@
 {
   "categories": [
     {
+      "icon": "fa-solid fa-user-shield",  
       "name": "Cyber Security",
       "file": "cyber-security.json",
       "displayOrder": 1,
       "description": "Advanced cybersecurity and ethical hacking courses"
     },
     {
+      "icon":  "fa-solid fa-universal-access", 
       "name": "Access Management",
       "file": "access-management.json",
       "displayOrder": 2,
       "description": "Learn access control and management strategies"
     },
     {
+      "icon":  "fa-solid fa-id-badge",  
       "name": "Identity Management",
       "file": "identity.json",
       "displayOrder": 3,
       "description": "Identity and access management fundamentals"
     },
     {
-      "name": "IT Courses",
-      "file": "it-courses.json",
+      "icon":  "fa-brands fa-microsoft",  
+      "name": "Microsoft Courses",
+      "file": "microsoft.json",
       "displayOrder": 4,
-      "description": "General IT and technology training courses"
+      "description": "Microsoft Azure and other microsoft training programs"
     }
   ]
 }

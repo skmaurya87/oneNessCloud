@@ -2,6 +2,14 @@ import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService, CourseCategory, Course } from 'src/app/services/common.service';
 
+export interface CategoryIndex {
+  icon: string;
+  name: string;
+  file: string;
+  displayOrder: number;
+  description: string;
+}
+
 @Component({
   selector: 'app-course-list',
   templateUrl: './course-list.component.html',
@@ -9,6 +17,7 @@ import { CommonService, CourseCategory, Course } from 'src/app/services/common.s
 })
 export class CourseListComponent implements OnInit, OnChanges {
   courseCategories: CourseCategory[] = [];
+  categoryIndex: CategoryIndex[] = [];
   allCategories: string[] = [];
   searchTerm: string = '';
   selectedCategory: string = 'all';
@@ -27,12 +36,26 @@ export class CourseListComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
+    this.loadCategoryIndex();
     this.loadCategories();
     this.loadCourses();
   }
 
   ngOnChanges(): void {
     this.loadCourses();
+  }
+
+  loadCategoryIndex(): void {
+    this.commonService.getCategoryIndex().subscribe(
+      (data: any) => {
+        this.categoryIndex = data.categories.sort((a: CategoryIndex, b: CategoryIndex) => 
+          a.displayOrder - b.displayOrder
+        );
+      },
+      (error) => {
+        console.error('Error loading category index:', error);
+      }
+    );
   }
 
   loadCategories(): void {
@@ -44,6 +67,14 @@ export class CourseListComponent implements OnInit, OnChanges {
         console.error('Error loading categories:', error);
       }
     );
+  }
+
+  navigateToCategory(category: CategoryIndex): void {
+    this.router.navigate(['/courses'], { 
+      queryParams: { category: category.name } 
+    }).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 
   loadCourses(): void {

@@ -1,3 +1,32 @@
+
+<section class="py-12 md:py-12 py-0" *ngIf="showCategoryHeadings">
+ <div class="container mx-auto">    
+    <div class="text-center mb-8 animate-fade-in">
+        <h3 class="text-2xl md:text-3xl font-display font-bold text-foreground mb-3">Explore Courses by Category</h3>
+        <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+    </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <a *ngFor="let category of categoryIndex" 
+       class="rounded-md p-6 cursor-pointer border text-card-foreground shadow h-full flex flex-col 
+              card-hover-effect border-card-border bg-card group" 
+       (click)="navigateToCategory(category)">
+        <div class="flex items-center mb-4">
+            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-accent/10 text-accent group-hover:bg-accent/20 transition-colors mr-4 flex-shrink-0">
+                <i [class]="category.icon + ' text-2xl'"></i>
+            </div>
+            <div class="flex-1">
+                <h3 class="text-lg font-semibold">{{ category.name }}</h3>
+                <p class="text-sm text-muted-foreground">
+                    {{ category.description }}
+                </p>
+            </div>
+        </div>
+    </a>
+</div>
+ </div>
+</section>
+
+<ng-container *ngIf="!showCategoryHeadings">
 <section [ngClass]="showHeading ? 'py-12 md:py-12':'py-0'">
     <div class="container mx-auto">
         
@@ -150,3 +179,4 @@
         </div>
     </div>
 </section>
+</ng-container>
