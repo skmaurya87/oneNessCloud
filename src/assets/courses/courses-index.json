@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "name": "Cyber Security",
+      "file": "cyber-security.json",
+      "displayOrder": 1,
+      "description": "Advanced cybersecurity and ethical hacking courses"
+    },
+    {
+      "name": "Access Management",
+      "file": "access-management.json",
+      "displayOrder": 2,
+      "description": "Learn access control and management strategies"
+    },
+    {
+      "name": "Identity Management",
+      "file": "identity.json",
+      "displayOrder": 3,
+      "description": "Identity and access management fundamentals"
+    },
+    {
+      "name": "IT Courses",
+      "file": "it-courses.json",
+      "displayOrder": 4,
+      "description": "General IT and technology training courses"
+    }
+  ]
+}

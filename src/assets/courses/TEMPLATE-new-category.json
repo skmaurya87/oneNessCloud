@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "level": "Beginner",
+    "badge": "Popular",
+    "title": "Course Title Here",
+    "description": "A brief description of the course that explains what students will learn.",
+    "duration_weeks": 8,
+    "students_enrolled": 1500,
+    "rating": 4.7,
+    "reviews": 250,
+    "img": "assets/images/course-image.jpg",
+    "fees": 299,
+    "heading1": "Key Features",
+    "features": [
+      "Feature 1: Hands-on labs",
+      "Feature 2: Expert instructors",
+      "Feature 3: Certification preparation",
+      "Feature 4: Lifetime access",
+      "Feature 5: 24/7 support"
+    ],
+    "heading2": "Course Overview",
+    "Overview": [
+      "First paragraph describing the course objectives and target audience.",
+      "Second paragraph explaining what makes this course unique and valuable.",
+      "Third paragraph mentioning career benefits and outcomes."
+    ],
+    "cta": "Learn More"
+  },
+  {
+    "id": 2,
+    "level": "Intermediate",
+    "badge": "Trending",
+    "title": "Another Course Example",
+    "description": "Description for the second course in this category.",
+    "duration_weeks": 10,
+    "students_enrolled": 2000,
+    "rating": 4.8,
+    "reviews": 350,
+    "img": "assets/images/another-course.jpg",
+    "fees": 399,
+    "heading1": "What You'll Learn",
+    "features": [
+      "Advanced concepts",
+      "Real-world projects",
+      "Industry best practices",
+      "Mentorship included"
+    ],
+    "heading2": "About This Course",
+    "Overview": [
+      "This course builds on foundational knowledge.",
+      "Perfect for professionals looking to advance their careers."
+    ],
+    "cta": "Enroll Now"
+  }
+]

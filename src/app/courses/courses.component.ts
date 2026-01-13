@@ -8,14 +8,18 @@ import { CommonService } from '../services/common.service';
 })
 export class CoursesComponent implements OnInit {
   categories: string[] = [];
-  selectedCategory: string | null = 'Cyber Security'; // Default to Cyber Security
+  selectedCategory: string | null = null;
 
   constructor(private commonService: CommonService) {}
 
   ngOnInit(): void {
-    this.commonService.getAllCourses().subscribe(
+    this.commonService.getCategories().subscribe(
       (data) => {
-        this.categories = data.map(cat => cat.name);
+        this.categories = data;
+        // Set first category as default
+        if (this.categories.length > 0) {
+          this.selectedCategory = this.categories[0];
+        }
       },
       (error) => {
         console.error('Error loading categories:', error);

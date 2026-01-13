@@ -9,11 +9,17 @@ import { CommonService, CourseCategory, Course } from 'src/app/services/common.s
 })
 export class CourseListComponent implements OnInit, OnChanges {
   courseCategories: CourseCategory[] = [];
-  @Input() limitPerCategory?: number; // undefined means no limit
+  allCategories: string[] = [];
+  searchTerm: string = '';
+  selectedCategory: string = 'all';
+  
+  @Input() limitPerCategory?: number;
   @Input() grid: boolean = false;
   @Input() showHeading: boolean = false;
   @Input() showCategoryHeadings: boolean = false;
-  @Input() filterCategory?: string | null; // Filter by specific category
+  @Input() showFilters: boolean = false;
+  @Input() showSearch: boolean = false;
+  @Input() filterCategory?: string | null;
 
   constructor(
     private commonService: CommonService, 
@@ -21,6 +27,7 @@ export class CourseListComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
+    this.loadCategories();
     this.loadCourses();
   }
 
@@ -28,11 +35,33 @@ export class CourseListComponent implements OnInit, OnChanges {
     this.loadCourses();
   }
 
+  loadCategories(): void {
+    this.commonService.getCategories().subscribe(
+      (categories) => {
+        this.allCategories = categories;
+      },
+      (error) => {
+        console.error('Error loading categories:', error);
+      }
+    );
+  }
+
   loadCourses(): void {
+    if (this.searchTerm.trim()) {
+      this.performSearch();
+      return;
+    }
+
     this.commonService.getAllCourses(this.limitPerCategory).subscribe(
       (categories) => {
         if (this.filterCategory) {
-          this.courseCategories = categories.filter(cat => cat.name === this.filterCategory);
+          this.courseCategories = categories.filter(cat => 
+            cat.name.toLowerCase() === this.filterCategory?.toLowerCase()
+          );
+        } else if (this.selectedCategory && this.selectedCategory !== 'all') {
+          this.courseCategories = categories.filter(cat => 
+            cat.name.toLowerCase() === this.selectedCategory.toLowerCase()
+          );
         } else {
           this.courseCategories = categories;
         }
@@ -43,10 +72,46 @@ export class CourseListComponent implements OnInit, OnChanges {
     );
   }
 
+  performSearch(): void {
+    if (!this.searchTerm.trim()) {
+      this.loadCourses();
+      return;
+    }
+
+    this.commonService.searchCourses(this.searchTerm).subscribe(
+      (categories) => {
+        this.courseCategories = categories;
+      },
+      (error) => {
+        console.error('Error searching courses:', error);
+      }
+    );
+  }
+
+  onCategoryChange(category: string): void {
+    this.selectedCategory = category;
+    this.searchTerm = '';
+    this.loadCourses();
+  }
+
+  onSearchChange(): void {
+    this.performSearch();
+  }
+
+  clearFilters(): void {
+    this.selectedCategory = 'all';
+    this.searchTerm = '';
+    this.loadCourses();
+  }
+
   viewProduct(course: Course) {
     this.router.navigate(['/course-description'], { state: { course } })
       .then(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+  }
+
+  get totalCoursesCount(): number {
+    return this.courseCategories.reduce((sum, cat) => sum + cat.courses.length, 0);
   }
 }

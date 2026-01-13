@@ -1,5 +1,79 @@
 <section [ngClass]="showHeading ? 'py-12 md:py-12':'py-0'">
     <div class="container mx-auto">
+        
+        <!-- Filters and Search Section -->
+        <div *ngIf="showFilters || showSearch" class="mb-8 animate-fade-in">
+            <div class="bg-card border border-card-border rounded-xl p-6 shadow-sm">
+                <div class="flex flex-col md:flex-row gap-4">
+                    
+                    <!-- Search Bar -->
+                    <div *ngIf="showSearch" class="flex-1">
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                [(ngModel)]="searchTerm" 
+                                (ngModelChange)="onSearchChange()"
+                                placeholder="Search courses by title, description, or level..." 
+                                class="w-full px-4 py-2.5 pl-10 rounded-lg border border-card-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            />
+                            <i class="fas fa-search absolute left-3 top-3.5 text-muted-foreground"></i>
+                            <button 
+                                *ngIf="searchTerm" 
+                                (click)="searchTerm = ''; onSearchChange()" 
+                                class="absolute right-3 top-3 text-muted-foreground hover:text-foreground transition-colors"
+                            >
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div *ngIf="showFilters" class="md:w-64">
+                        <select 
+                            [(ngModel)]="selectedCategory" 
+                            (ngModelChange)="onCategoryChange($event)"
+                            class="w-full px-4 py-2.5 rounded-lg border border-card-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all cursor-pointer"
+                        >
+                            <option value="all">All Categories</option>
+                            <option *ngFor="let category of allCategories" [value]="category">
+                                {{ category }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Clear Filters Button -->
+                    <div *ngIf="showFilters && (searchTerm || selectedCategory !== 'all')">
+                        <button 
+                            (click)="clearFilters()" 
+                            class="px-4 py-2.5 rounded-lg border border-card-border bg-background text-foreground hover:bg-accent/10 transition-colors whitespace-nowrap"
+                        >
+                            <i class="fas fa-redo-alt mr-2"></i>Clear Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Count -->
+                <div *ngIf="(showFilters || showSearch) && totalCoursesCount >= 0" class="mt-4 text-sm text-muted-foreground">
+                    <span class="font-semibold text-foreground">{{ totalCoursesCount }}</span> course{{ totalCoursesCount !== 1 ? 's' : '' }} found
+                </div>
+            </div>
+        </div>
+
+        <!-- No Results Message -->
+        <div *ngIf="courseCategories.length === 0" class="text-center py-12">
+            <div class="inline-block p-6 rounded-full bg-accent/10 mb-4">
+                <i class="fas fa-search text-4xl text-accent"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-foreground mb-2">No courses found</h3>
+            <p class="text-muted-foreground mb-4">Try adjusting your search or filters</p>
+            <button 
+                (click)="clearFilters()" 
+                class="px-6 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary-light transition-colors"
+            >
+                Clear Filters
+            </button>
+        </div>
+
         <!-- Loop through each category -->
         <div *ngFor="let category of courseCategories; let categoryIndex = index" 
              [ngClass]="categoryIndex > 0 ? 'mt-16' : ''">

@@ -27,17 +27,39 @@
         </a>
       </div>
       <nav class="hidden md:flex items-center gap-8">
-<a routerLink="about-us" class="text-foreground hover:text-primary font-medium transition-colors relative group">About
-  Us<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
-<a routerLink="courses"
-  class="text-foreground hover:text-primary font-medium transition-colors relative group">Courses
-  <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
-<a routerLink="blogs"
-  class="text-foreground hover:text-primary font-medium transition-colors relative group">Blogs
-  <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
-        </nav>
+        <!-- Dynamic Menu Items -->
+        <ng-container *ngFor="let item of menuItems">
+          <!-- Menu Item with Dropdown -->
+          <div *ngIf="item.hasDropdown" class="relative group">
+            <a [routerLink]="item.routerLink"
+              class="text-foreground hover:text-primary font-medium transition-colors relative cursor-pointer flex items-center gap-1">
+              {{ item.label }}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+            </a>
+            <!-- Dropdown Menu -->
+            <div class="absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400">
+              <a *ngFor="let subitem of item.submenu; let first = first; let last = last" 
+                 [routerLink]="subitem.routerLink" 
+                 class="block px-4 py-3 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-400"
+                 [class.first:rounded-t-lg]="first"
+                 [class.last:rounded-b-lg]="last">
+                {{ subitem.label }}
+              </a>
+            </div>
+          </div>
 
-
+          <!-- Regular Menu Item (No Dropdown) -->
+          <a *ngIf="!item.hasDropdown" 
+             [routerLink]="item.routerLink"
+             class="text-foreground hover:text-primary font-medium transition-colors relative group">
+            {{ item.label }}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+          </a>
+        </ng-container>
+      </nav>
       <button (click)="toggleMobileMenu()" class="md:hidden text-foreground hover:text-primary transition-colors" aria-label="Toggle menu">
         <svg *ngIf="!isMobileMenuOpen"
           xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -62,21 +84,37 @@
   <div *ngIf="isMobileMenuOpen" 
        class="md:hidden bg-background border-t border-border animate-fade-in">
     <nav class="container mx-auto px-4 py-4 flex flex-col gap-4">
-      <a (click)="closeMobileMenu()" 
-         routerLink="about-us"
-         class="text-foreground hover:text-primary font-medium transition-colors py-2">
-        About Us
-      </a>
-      <a (click)="closeMobileMenu()" 
-         routerLink="courses"
-         class="text-foreground hover:text-primary font-medium transition-colors py-2">
-        Courses
-      </a>
-      <a (click)="closeMobileMenu()" 
-         routerLink="blogs"
-         class="text-foreground hover:text-primary font-medium transition-colors py-2">
-        Blogs
-      </a>
+      <!-- Dynamic Menu Items -->
+      <ng-container *ngFor="let item of menuItems">
+        <!-- Menu Item with Submenu -->
+        <div *ngIf="item.hasDropdown" class="flex flex-col">
+          <div (click)="toggleMobileSubmenu(item.mobileOpenKey!)" 
+               class="text-foreground hover:text-primary font-medium transition-colors py-2 flex items-center justify-between cursor-pointer">
+            <span>{{ item.label }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                 class="lucide lucide-chevron-down transition-transform duration-400"
+                 [class.rotate-180]="mobileSubmenuStates[item.mobileOpenKey!]">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div *ngIf="mobileSubmenuStates[item.mobileOpenKey!]" class="pl-4 flex flex-col gap-2 mt-2 animate-fade-in">
+            <a *ngFor="let subitem of item.submenu" 
+               (click)="closeMobileMenu()" 
+               [routerLink]="subitem.routerLink"
+               class="text-foreground/80 hover:text-primary text-sm transition-all duration-400 py-1.5">
+              {{ subitem.label }}
+            </a>
+          </div>
+        </div>
+
+        <!-- Regular Menu Item (No Submenu) -->
+        <a *ngIf="!item.hasDropdown" 
+           (click)="closeMobileMenu()" 
+           [routerLink]="item.routerLink"
+           class="text-foreground hover:text-primary font-medium transition-colors py-2">
+          {{ item.label }}
+        </a>
+      </ng-container>
     </nav>
   </div>
-</header>
+</header>  
