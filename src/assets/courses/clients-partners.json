@@ -1,0 +1,136 @@
+{
+  "clients": [
+    {
+      "id": "accenture",
+      "name": "Accenture",
+      "logo": "Accenture.png"
+    },
+    {
+      "id": "airtel",
+      "name": "Airtel",
+      "logo": "Airtel.png"
+    },
+    {
+      "id": "american-express",
+      "name": "American Express",
+      "logo": "American-Express.png"
+    },
+    {
+      "id": "astrazeneca",
+      "name": "AstraZeneca",
+      "logo": "AstraZeneca.png"
+    },
+    {
+      "id": "bhel",
+      "name": "BHEL",
+      "logo": "BHEL.png"
+    },
+    {
+      "id": "boa",
+      "name": "Bank of America",
+      "logo": "BOA.png"
+    },
+    {
+      "id": "bpcl",
+      "name": "BPCL",
+      "logo": "BPCL.png"
+    },
+    {
+      "id": "dell",
+      "name": "Dell",
+      "logo": "Dell.png"
+    },
+    {
+      "id": "fidelity",
+      "name": "Fidelity",
+      "logo": "Fidelity.png"
+    },
+    {
+      "id": "hcl",
+      "name": "HCL",
+      "logo": "HCL.png"
+    },
+    {
+      "id": "hdfc",
+      "name": "HDFC",
+      "logo": "HDFC.png"
+    },
+    {
+      "id": "icici-prudential",
+      "name": "ICICI Prudential",
+      "logo": "ICICI-Prudential.png"
+    },
+    {
+      "id": "invesco",
+      "name": "Invesco",
+      "logo": "Invesco.png"
+    },
+    {
+      "id": "kpmg",
+      "name": "KPMG",
+      "logo": "KPMG.png"
+    },
+    {
+      "id": "pwc",
+      "name": "PwC",
+      "logo": "PWC.png"
+    },
+    {
+      "id": "sony",
+      "name": "Sony",
+      "logo": "SONY.png"
+    },
+    {
+      "id": "unilever",
+      "name": "Unilever",
+      "logo": "Unilever.png"
+    }
+  ],
+  "partners": [
+    {
+      "id": "comptia",
+      "name": "CompTIA",
+      "logo": "comp-tia.png"
+    },
+    {
+      "id": "csa",
+      "name": "Cloud Security Alliance",
+      "logo": "csa-partner.png"
+    },
+    {
+      "id": "ec-council",
+      "name": "EC-Council",
+      "logo": "ec-council_new.png"
+    },
+    {
+      "id": "exemplar",
+      "name": "Exemplar",
+      "logo": "Exemplar-recognised-training-provider-rtp.png"
+    },
+    {
+      "id": "iapp",
+      "name": "International Association of Privacy Professionals",
+      "logo": "iapp.png"
+    },
+    {
+      "id": "isaca",
+      "name": "ISACA",
+      "logo": "isaca.png"
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "logo": "microsoft-lpi.png"
+    },
+    {
+      "id": "pecb",
+      "name": "PECB",
+      "logo": "pecb_auth.png"
+    },
+    {
+      "id": "tuv-sud",
+      "name": "TÜV SÜD",
+      "logo": "tuv_sud_partner.png"
+    }
+  ]
+}

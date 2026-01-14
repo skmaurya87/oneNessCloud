@@ -170,4 +170,34 @@ export class CommonService {
       })
     );
   }
+
+  /**
+   * Load clients and partners data from the unified JSON file
+   */
+  getClientsAndPartners(): Observable<any> {
+    return this.http.get('assets/courses/clients-partners.json').pipe(
+      catchError(error => {
+        console.error('Error loading clients-partners data:', error);
+        return of({ clients: [], partners: [] });
+      })
+    );
+  }
+
+  /**
+   * Get only clients data
+   */
+  getClients(): Observable<any[]> {
+    return this.getClientsAndPartners().pipe(
+      map(data => data.clients || [])
+    );
+  }
+
+  /**
+   * Get only partners data
+   */
+  getPartners(): Observable<any[]> {
+    return this.getClientsAndPartners().pipe(
+      map(data => data.partners || [])
+    );
+  }
 }

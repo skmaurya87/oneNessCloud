@@ -1,13 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { CommonService } from '../../services/common.service';
 @Component({
   selector: 'app-our-clients',
   templateUrl: './our-clients.component.html',
   styleUrls: ['./our-clients.component.css']
 })
-export class OurClientsComponent {
-courses: any[ ] = ['Accenture', 'Airtel', 'American-Express', 'AstraZeneca', 'BHEL', 'BOA', 'BPCL', 'Dell', 'Fidelity'
-  , 'HCL', 'HDFC', 'ICICI-Prudential', 'Invesco', 'KPMG', 'PWC', 'SONY', 'Unilever'];
+export class OurClientsComponent implements OnInit {
+  clients: any[] = [];
+  isLoading = true;
+
+  constructor(private commonService: CommonService) {}
+
+  ngOnInit(): void {
+    this.loadClients();
+  }
+
+  private loadClients(): void {
+    this.commonService.getClients().subscribe({
+      next: (clients) => {
+        this.clients = clients;
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Error loading clients:', error);
+        this.isLoading = false;
+      }
+    });
+  }
 
   customOptions1: OwlOptions = {
     loop: true,

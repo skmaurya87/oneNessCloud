@@ -21,6 +21,17 @@ import { CoursesComponent } from './courses/courses.component';
 import { OurPartnersComponent } from './components/our-partners/our-partners.component';
 import { OurClientsComponent } from './components/our-clients/our-clients.component';
 import { provideSweetAlert2 } from '@sweetalert2/ngx-sweetalert2';
+import { AboutComponent } from './about-us/about/about.component';
+import { LeadershipComponent } from './about-us/leadership/leadership.component';
+import { HappinessGuaranteeComponent } from './about-us/happiness-guarantee/happiness-guarantee.component';
+import { StudentFeedbackComponent } from './about-us/student-feedback/student-feedback.component';
+import { TestimonialComponent } from './about-us/testimonial/testimonial.component';
+import { OnenessKoshisComponent } from './about-us/oneness-koshis/oneness-koshis.component';
+import { LiveOnlineTraningComponent } from './live-online-traning/live-online-traning.component';
+import { ClassroomTrainingComponent } from './classroom-training/classroom-training.component';
+import { OneOnOneTrainingComponent } from './one-on-one-training/one-on-one-training.component';
+import { WebinarsAsAServiceComponent } from './webinars-as-a-service/webinars-as-a-service.component';
+import { UpcomingWebinarsComponent } from './upcoming-webinars/upcoming-webinars.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +46,18 @@ import { provideSweetAlert2 } from '@sweetalert2/ngx-sweetalert2';
     OurExpertsComponent,
     CoursesComponent,
     OurPartnersComponent,
-    OurClientsComponent
+    OurClientsComponent,
+    AboutComponent,
+    LeadershipComponent,
+    HappinessGuaranteeComponent,
+    StudentFeedbackComponent,
+    TestimonialComponent,
+    OnenessKoshisComponent,
+    LiveOnlineTraningComponent,
+    ClassroomTrainingComponent,
+    OneOnOneTrainingComponent,
+    WebinarsAsAServiceComponent,
+    UpcomingWebinarsComponent
 
   ],
   imports: [

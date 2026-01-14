@@ -48,7 +48,7 @@ export class NavbarComponent {
       mobileOpenKey: 'aboutUs',
       submenu: [
         { label: 'About Us', routerLink: 'about-us/about' },
-        { label: 'Our Client', routerLink: 'about-us/our-client' },
+        { label: 'Our Clients', routerLink: 'about-us/our-clients' },
         { label: 'Leadership', routerLink: 'about-us/leadership' },
         { label: 'Partners', routerLink: 'about-us/partners' },
         { label: 'Happiness Guarantee', routerLink: 'about-us/happiness-guarantee' },
@@ -63,11 +63,11 @@ export class NavbarComponent {
       hasDropdown: true,
       mobileOpenKey: 'learningOptions',
       submenu: [
-        { label: 'Live Online Training', routerLink: 'learning-options/live-online-training' },
-        { label: 'Classroom Training', routerLink: 'learning-options/classroom-training' },
-        { label: '1-on-1 Training', routerLink: 'learning-options/1-on-1-training' },
-        { label: 'Webinars as a Service', routerLink: 'learning-options/webinars-as-a-service' },
-        { label: 'Upcoming webinars', routerLink: 'learning-options/upcoming-webinars' }
+        { label: 'Live Online Training', routerLink: 'learning/live-online-training' },
+        { label: 'Classroom Training', routerLink: 'learning/classroom-training' },
+        { label: '1-on-1 Training', routerLink: 'learning/one-on-one-training' },
+        { label: 'Webinars as a Service', routerLink: 'learning/webinars-as-a-service' },
+        { label: 'Upcoming webinars', routerLink: 'learning/upcoming-webinars' }
       ]
     },
     {

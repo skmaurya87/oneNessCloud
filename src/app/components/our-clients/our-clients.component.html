@@ -4,9 +4,22 @@
         <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
     </div>
 
-<owl-carousel-o [options]="customOptions1">
-  <ng-template carouselSlide *ngFor="let course of courses">
-        <img [src]="'assets/images/clients/' + course + '.png'" [alt]="course" style="max-width: 100%;">
-  </ng-template>
-</owl-carousel-o>
+    <div *ngIf="isLoading" class="text-center py-8">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
+        <p class="mt-2 text-muted-foreground">Loading clients...</p>
+    </div>
+
+    <owl-carousel-o *ngIf="!isLoading && clients.length > 0" [options]="customOptions1">
+        <ng-template carouselSlide *ngFor="let client of clients">
+            <img [src]="'assets/images/clients/' + client.logo" 
+                 [alt]="client.name" 
+                 [title]="client.name"
+                 style="max-width: 100%;" 
+                 class="object-contain">
+        </ng-template>
+    </owl-carousel-o>
+
+    <div *ngIf="!isLoading && clients.length === 0" class="text-center py-8">
+        <p class="text-muted-foreground">No clients data available.</p>
+    </div>
  </div>

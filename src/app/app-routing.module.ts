@@ -5,14 +5,39 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { CoursesComponent } from './courses/courses.component';
-
+import { AboutComponent } from './about-us/about/about.component';
+import { HappinessGuaranteeComponent } from './about-us/happiness-guarantee/happiness-guarantee.component';
+import { LeadershipComponent } from './about-us/leadership/leadership.component';
+import { OnenessKoshisComponent } from './about-us/oneness-koshis/oneness-koshis.component';
+import { OurClientsComponent } from './about-us/our-clients/our-clients.component';
+import { StudentFeedbackComponent } from './about-us/student-feedback/student-feedback.component';
+import { TestimonialComponent } from './about-us/testimonial/testimonial.component';
+import { LiveOnlineTraningComponent } from './live-online-traning/live-online-traning.component';
+import { ClassroomTrainingComponent } from './classroom-training/classroom-training.component';
+import { OneOnOneTrainingComponent } from './one-on-one-training/one-on-one-training.component';
+import { WebinarsAsAServiceComponent } from './webinars-as-a-service/webinars-as-a-service.component';
+import { UpcomingWebinarsComponent } from './upcoming-webinars/upcoming-webinars.component';
 const routes: Routes = [
    { path: '', component: HomeComponent },
    { path: 'home', component: HomeComponent },
-   { path: 'about-us', component: AboutUsComponent },
-   { path: 'course-list', component: CourseListComponent },
+   { path: 'about-us', component: AboutUsComponent,
+     children: [
+      {path: 'about' , component: AboutComponent},
+      {path: 'happiness-guarantee' , component: HappinessGuaranteeComponent},
+      {path: 'leadership' , component: LeadershipComponent},
+      {path: 'oneness-koshis' , component: OnenessKoshisComponent},
+      {path: 'our-clients' , component: OurClientsComponent},
+      {path: 'student-feedback' , component: StudentFeedbackComponent},
+      {path: 'testimonial' , component: TestimonialComponent},
+    ] 
+   },
    { path: 'courses', component: CoursesComponent },
-   { path: 'course-description', component: CourseDetailsComponent },
+   { path: 'live-online-training', component: LiveOnlineTraningComponent },
+   { path: 'classroom-training', component: ClassroomTrainingComponent },
+   { path: 'one-on-one-training', component: OneOnOneTrainingComponent },
+   { path: 'webinars-as-a-service', component: WebinarsAsAServiceComponent },
+   { path: 'upcoming-webinars', component: UpcomingWebinarsComponent },
+   
 
 ];
 @NgModule({

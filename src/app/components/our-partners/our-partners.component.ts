@@ -1,13 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { CommonService } from '../../services/common.service';
 @Component({
   selector: 'app-our-partners',
   templateUrl: './our-partners.component.html',
   styleUrls: ['./our-partners.component.css']
 })
-export class OurPartnersComponent {
+export class OurPartnersComponent implements OnInit {
+  partners: any[] = [];
+  isLoading = true;
 
-courses: any[ ] = ['comp-tia', 'csa-partner', 'ec-council_new', 'Exemplar-recognised-training-provider-rtp', 'iapp', 'isaca', 'microsoft-lpi', 'pecb_auth', 'tuv_sud_partner',];
+  constructor(private commonService: CommonService) {}
+
+  ngOnInit(): void {
+    this.loadPartners();
+  }
+
+  private loadPartners(): void {
+    this.commonService.getPartners().subscribe({
+      next: (partners) => {
+        this.partners = partners;
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Error loading partners:', error);
+        this.isLoading = false;
+      }
+    });
+  }
 
   customOptions: OwlOptions = {
     loop: true,
