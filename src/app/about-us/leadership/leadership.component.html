@@ -1,1 +1,28 @@
-<p>leadership works!</p>
+<div class="py-12 md:py-8">   
+<app-heading [heading]="'Our Leadership Team'" [align]="'text-center'"></app-heading>  
+<div class="max-w-4xl mx-auto text-center mb-8 px-4">
+  <p class="text-base text-gray-700 leading-relaxed">
+    Our leadership team brings together decades of industry experience, technical expertise, and a shared passion for innovation. 
+    Each leader has been carefully selected for their proven track record of driving transformational change, fostering collaborative 
+    environments, and delivering exceptional results. They guide our organization with a commitment to excellence, continuous learning, 
+    and empowering teams to reach their full potential while maintaining our core values of integrity, innovation, and customer success.
+  </p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:p-4 md:p-4 lg:p-4">
+
+<ng-container *ngFor="let leader of leaders">    
+<div class="bg-neutral-primary-soft block max-w-sm p-4 border border-default rounded-base shadow-xs">
+    <img class="rounded-base" 
+    [src]="leader.img || 'assets/images/leader1.jpg'"
+    (error)="onImgError($event)"
+    [alt]="leader.name" />
+    
+    <h5 class="mt-6 mb-2 text-md font-semibold tracking-tight text-heading">{{leader.name}}</h5>
+    <p class="mb-6 text-sm">{{leader.bio}}</p>
+</div>
+</ng-container>
+
+
+</div>
+</div>

@@ -1,11 +1,9 @@
 
 
 <section class="py-12 md:py-12 py-0 bg-muted" *ngIf="showCategoryHeadings">
- <div class="container mx-auto">    
-    <div class="text-center mb-8 animate-fade-in">
-        <h3 class="text-2xl md:text-3xl font-display font-bold text-foreground mb-3">Explore Courses by Category</h3>
-        <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
-    </div>
+ <div class="container mx-auto">  
+    <app-heading [heading]="'Explore Courses by Category'" [align]="'text-center'"></app-heading>    
+   
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     <a *ngFor="let category of categoryIndex" 
        class="rounded-md p-6 cursor-pointer border text-card-foreground shadow h-full flex flex-col 

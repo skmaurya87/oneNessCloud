@@ -19,7 +19,7 @@ import { WhyChooseUsComponent } from './components/why-choose-us/why-choose-us.c
 import { OurExpertsComponent } from './components/our-experts/our-experts.component';
 import { CoursesComponent } from './courses/courses.component';
 import { OurPartnersComponent } from './components/our-partners/our-partners.component';
-import { OurClientsComponent } from './components/our-clients/our-clients.component';
+import { OurClientsComponent } from './about-us/our-clients/our-clients.component';
 import { provideSweetAlert2 } from '@sweetalert2/ngx-sweetalert2';
 import { AboutComponent } from './about-us/about/about.component';
 import { LeadershipComponent } from './about-us/leadership/leadership.component';
@@ -32,6 +32,7 @@ import { ClassroomTrainingComponent } from './classroom-training/classroom-train
 import { OneOnOneTrainingComponent } from './one-on-one-training/one-on-one-training.component';
 import { WebinarsAsAServiceComponent } from './webinars-as-a-service/webinars-as-a-service.component';
 import { UpcomingWebinarsComponent } from './upcoming-webinars/upcoming-webinars.component';
+import { HeadingComponent } from './heading/heading.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,8 @@ import { UpcomingWebinarsComponent } from './upcoming-webinars/upcoming-webinars
     ClassroomTrainingComponent,
     OneOnOneTrainingComponent,
     WebinarsAsAServiceComponent,
-    UpcomingWebinarsComponent
+    UpcomingWebinarsComponent,
+    HeadingComponent
 
   ],
   imports: [

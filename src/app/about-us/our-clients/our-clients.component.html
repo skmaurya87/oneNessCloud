@@ -1,1 +1,45 @@
-<p>our-clients works!</p>
+ <div class="container mx-auto py-16 md:py-20" *ngIf="homePage">    
+
+     <app-heading [heading]="'Our Valuable Clients'" [align]="'text-center'"></app-heading>
+    
+
+    <div *ngIf="isLoading" class="text-center py-8">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
+        <p class="mt-2 text-muted-foreground">Loading clients...</p>
+    </div>
+
+    <owl-carousel-o *ngIf="!isLoading && clients.length > 0" [options]="customOptions1">
+        <ng-template carouselSlide *ngFor="let client of clients">
+                    <img [src]="'assets/images/clients/' + client.logo" 
+                        [alt]="client.name" 
+                        [title]="client.name"
+                        style="max-width: 100%;" 
+                        class="object-contain">
+        </ng-template>
+    </owl-carousel-o>
+    <div *ngIf="!isLoading && clients.length === 0" class="text-center py-8">
+        <p class="text-muted-foreground">No clients data available.</p>
+    </div>
+ </div>
+
+
+<div class="container mx-auto py-12 md:py-8">    
+<ng-container *ngIf="!homePage">
+   <app-heading [heading]="'Our Valuable Clients'" [align]="'text-center'"></app-heading>  
+        <div *ngIf="!isLoading && clients.length === 0" class="text-center py-8">
+        <p class="text-muted-foreground">No clients data available.</p>
+    </div>
+    
+<div class="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="flex shadow w-full p-4 rounded-md border border-gray-200 rounded items-center justify-self-center hover:border-blue-400 transition-border duration-300" *ngFor="let client of clients">
+        <img [src]="'assets/images/clients/' + client.logo" 
+                 [alt]="client.name" 
+                 [title]="client.name"
+                 style="max-width: 100%;" 
+                 class="object-contain">
+    </div>
+</div>
+</ng-container>
+
+
+ </div>

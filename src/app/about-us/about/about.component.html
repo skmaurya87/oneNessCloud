@@ -1,32 +1,11 @@
 <div class="bg-blue-50">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-12">
-    <section class="text-center">
-      <h1 class="text-xl sm:text-xl lg:text-2xl font-bold text-text-light-primary dark:text-text-dark-primary">What We
-        Do Everyday</h1>
-      <p class="mt-4 max-w-3xl mx-auto lg:text-md sm:text-md leading-relaxed">
-        We are one of the finest Online Training Companies, solely focused and dedicated to your career development. We
-        have partnered with well-known companies and prestigious institutions to train the next generation in IT
-        technologies. Our objective is to foster growth and upgrade your career objectives with proper knowledge and
-        skills.
-      </p>
-     
-    </section>
-    <section class="mt-16 sm:mt-16">
-      <div class="bg-light dark:bg-dark rounded-lg shadow-md p-8 sm:p-12 lg:p-16 text-center">
-        <h2 class="text-xl sm:text-xl lg:text-2xl font-bold text-text-light-primary dark:text-text-dark-primary">Our Vision</h2>
-        <p class="mt-4 max-w-4xl mx-auto lg:text-md sm:text-md leading-relaxed">
-          All desire to achieve their dream jobs and position but a few succeed to reach their goal. Our vision is to
-          help you to achieve your aim. We work tirelessly to create a better version of you so that you become the most
-          desirable candidate for the job you dream of. We are one of the most trusted and well known for holding your
-          hand and helping you to climb towards the peak of your success.
-        </p>
-      </div>
-    </section>
-    <section class="mt-16 sm:mt-16">
+
+    <section class="">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div class="order-2 lg:order-1 lg:col-span-8">
-          <h2 class="text-xl sm:text-xl lg:text-2xl font-bold text-text-light-primary dark:text-text-dark-primary">Who We Are?
-          </h2>
+
+           <app-heading [heading]="'Who We Are?'" [align]="'text-left'"></app-heading>
           <p class="mt-4 lg:text-md sm:text-md leading-relaxed">
             We are a team that provides certification aligned training in the most demanding IT technologies. Our goal
             is to make every person who is career-oriented become more capable and skill-oriented.
@@ -45,5 +24,32 @@
         </div>
       </div>
     </section>
+    <section class="my-12">
+      <div class="bg-light dark:bg-dark rounded-lg shadow-md p-8 sm:p-12 lg:p-16 text-center">
+            <div class="text-center mb-8 animate-fade-in">
+              <app-heading [heading]="'Our Vision'" [align]="'text-center'"></app-heading>
+            </div>
+        <p class="mt-4 max-w-4xl mx-auto lg:text-md sm:text-md leading-relaxed">
+          All desire to achieve their dream jobs and position but a few succeed to reach their goal. Our vision is to
+          help you to achieve your aim. We work tirelessly to create a better version of you so that you become the most
+          desirable candidate for the job you dream of. We are one of the most trusted and well known for holding your
+          hand and helping you to climb towards the peak of your success.
+        </p>
+      </div>
+    </section>
+    <section class="text-center">
+        <div class="text-center mb-8 animate-fade-in">
+          <app-heading [heading]="'What We Do Everyday'" [align]="'text-center'"></app-heading>
+        </div>
+      <p class="mt-4 max-w-3xl mx-auto lg:text-md sm:text-md leading-relaxed">
+        We are one of the finest Online Training Companies, solely focused and dedicated to your career development. We
+        have partnered with well-known companies and prestigious institutions to train the next generation in IT
+        technologies. Our objective is to foster growth and upgrade your career objectives with proper knowledge and
+        skills.
+      </p>
+     
+    </section>
+
+
   </div>
 </div>

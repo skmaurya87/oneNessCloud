@@ -191,7 +191,6 @@ export class CommonService {
       map(data => data.clients || [])
     );
   }
-
   /**
    * Get only partners data
    */
@@ -199,5 +198,18 @@ export class CommonService {
     return this.getClientsAndPartners().pipe(
       map(data => data.partners || [])
     );
+  }
+
+  getLeadershipData(): Observable<any[]> {
+    return this.http.get<any[]>('assets/courses/leadership.json').pipe(
+      catchError(error => {
+        console.error('Error loading leadership data:', error);
+        return of([]);
+      })
+    );
+  }
+
+  getLeadership(): Observable<any[]> {
+    return this.getLeadershipData();
   }
 }

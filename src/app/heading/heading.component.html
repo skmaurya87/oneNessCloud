@@ -1,0 +1,14 @@
+<div class="mb-8 animate-fade-in" [ngClass]="align">
+    <h2 class="text-xl sm:text-xl lg:text-2xl font-bold text-text-light-primary dark:text-text-dark-primary">
+        {{ heading }}
+    </h2>
+
+    <div
+        class="w-16 h-1 bg-accent rounded-full"
+        [ngClass]="{
+            'mx-auto': align === 'text-center',
+            'ml-0': align === 'text-left',
+            'mr-0 ml-auto': align === 'text-right'
+        }">
+    </div>
+</div>

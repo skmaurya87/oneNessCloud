@@ -37,6 +37,7 @@ const routes: Routes = [
    { path: 'one-on-one-training', component: OneOnOneTrainingComponent },
    { path: 'webinars-as-a-service', component: WebinarsAsAServiceComponent },
    { path: 'upcoming-webinars', component: UpcomingWebinarsComponent },
+   { path: 'course-description', component: CourseDetailsComponent },
    
 
 ];
