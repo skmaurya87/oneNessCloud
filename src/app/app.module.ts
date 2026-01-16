@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -18,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { WhyChooseUsComponent } from './components/why-choose-us/why-choose-us.component';
 import { OurExpertsComponent } from './components/our-experts/our-experts.component';
 import { CoursesComponent } from './courses/courses.component';
-import { OurPartnersComponent } from './components/our-partners/our-partners.component';
+import { OurPartnersComponent } from './about-us/about/our-partners/our-partners.component';
 import { OurClientsComponent } from './about-us/our-clients/our-clients.component';
 import { provideSweetAlert2 } from '@sweetalert2/ngx-sweetalert2';
 import { AboutComponent } from './about-us/about/about.component';
@@ -33,6 +34,8 @@ import { OneOnOneTrainingComponent } from './one-on-one-training/one-on-one-trai
 import { WebinarsAsAServiceComponent } from './webinars-as-a-service/webinars-as-a-service.component';
 import { UpcomingWebinarsComponent } from './upcoming-webinars/upcoming-webinars.component';
 import { HeadingComponent } from './heading/heading.component';
+import { LiveOnlineTrainingComponent } from './about-us/live-online-training/live-online-training.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,12 +62,15 @@ import { HeadingComponent } from './heading/heading.component';
     OneOnOneTrainingComponent,
     WebinarsAsAServiceComponent,
     UpcomingWebinarsComponent,
-    HeadingComponent
+    HeadingComponent,
+    LiveOnlineTrainingComponent,
+    ContactUsComponent
 
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CommonModule,
     MenubarModule,
     AppRoutingModule,
     CarouselModule,

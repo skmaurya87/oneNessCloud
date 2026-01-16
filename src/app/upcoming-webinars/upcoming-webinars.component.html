@@ -1,1 +1,198 @@
-<p>upcoming-webinars works!</p>
+<!-- Hero Section -->
+<section class="relative min-h-[350px] md:min-h-[400px] flex items-center overflow-hidden bg-gradient-to-br from-primary via-primary-dark/90 to-primary-dark">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/90 via-primary/80 to-primary/65"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center animate-fade-in">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-primary-foreground leading-tight mb-6">
+                Upcoming Webinars
+                <span class="block mt-2 text-accent">Learn Live, Learn Free</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-primary-foreground/90 mb-8 leading-relaxed">
+                Join our expert-led webinars and stay ahead in technology. Free knowledge sessions designed to accelerate your career.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+               <button routerLink="/contact-us"
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none h-12 rounded-md px-8 bg-accent hover:bg-accent-hover text-accent-foreground font-semibold shadow-lg btn-hover-lift">
+                    View All Webinars
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar">
+                        <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                        <line x1="16" x2="16" y1="2" y2="6"/>
+                        <line x1="8" x2="8" y1="2" y2="6"/>
+                        <line x1="3" x2="21" y1="10" y2="10"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<div class="container mx-auto py-16 md:py-20">
+    <!-- Quick Info Section -->
+    <div class="max-w-4xl mx-auto mb-12 text-center">
+        <h2 class="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">Free Expert Sessions</h2>
+        <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-6"></div>
+        <p class="text-muted-foreground max-w-xl mx-auto">
+            Interactive sessions with industry experts covering trending technologies and career insights.
+        </p>
+    </div>
+
+    <!-- Key Features Quick Grid -->
+    <div class="grid md:grid-cols-4 gap-6 mb-16">
+        <div class="text-center bg-card p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users text-accent">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-foreground mb-2">Live Q&A</h3>
+            <p class="text-muted-foreground text-sm">Direct interaction with experts</p>
+        </div>
+
+        <div class="text-center bg-card p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock text-accent">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12,6 12,12 16,14"/>
+                </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-foreground mb-2">60 Minutes</h3>
+            <p class="text-muted-foreground text-sm">Concise, focused sessions</p>
+        </div>
+
+        <div class="text-center bg-card p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download text-accent">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7,10 12,15 17,10"/>
+                    <line x1="12" x2="12" y1="15" y2="3"/>
+                </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-foreground mb-2">Recordings</h3>
+            <p class="text-muted-foreground text-sm">Access anytime after event</p>
+        </div>
+
+        <div class="text-center bg-card p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift text-accent">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                    <path d="M12 5v13"/>
+                    <path d="M5 12h14"/>
+                </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-foreground mb-2">Free Access</h3>
+            <p class="text-muted-foreground text-sm">No cost, just register</p>
+        </div>
+    </div>
+
+    <!-- Upcoming Events Section -->
+    <div class="mb-16">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">This Week's Sessions</h2>
+            <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+        </div>
+        
+        <!-- Sample Webinar Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- Webinar Card 1 -->
+            <div class="bg-card rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                <div class="bg-gradient-to-r from-accent/20 to-accent/10 p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-semibold text-accent bg-accent/20 px-2 py-1 rounded-full">UPCOMING</span>
+                        <span class="text-sm text-muted-foreground">Jan 18, 2026</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-foreground mb-2">Cloud Migration Strategies</h3>
+                    <p class="text-sm text-muted-foreground mb-3">Learn best practices for seamless cloud transitions</p>
+                </div>
+                <div class="p-4">
+                    <div class="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                        <span>🕒 2:00 PM EST</span>
+                        <span>👤 John Smith</span>
+                    </div>
+                    <button routerLink="/contact-us" class="w-full bg-accent hover:bg-accent-hover text-accent-foreground py-2 px-4 rounded-md font-semibold text-sm transition-colors">
+                        Register Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Webinar Card 2 -->
+            <div class="bg-card rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                <div class="bg-gradient-to-r from-accent/20 to-accent/10 p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-semibold text-accent bg-accent/20 px-2 py-1 rounded-full">UPCOMING</span>
+                        <span class="text-sm text-muted-foreground">Jan 20, 2026</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-foreground mb-2">AI & Machine Learning</h3>
+                    <p class="text-sm text-muted-foreground mb-3">Getting started with AI in your business</p>
+                </div>
+                <div class="p-4">
+                    <div class="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                        <span>🕒 3:00 PM EST</span>
+                        <span>👤 Sarah Johnson</span>
+                    </div>
+                    <button routerLink="/contact-us" class="w-full bg-accent hover:bg-accent-hover text-accent-foreground py-2 px-4 rounded-md font-semibold text-sm transition-colors">
+                        Register Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Webinar Card 3 -->
+            <div class="bg-card rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                <div class="bg-gradient-to-r from-accent/20 to-accent/10 p-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-semibold text-accent bg-accent/20 px-2 py-1 rounded-full">UPCOMING</span>
+                        <span class="text-sm text-muted-foreground">Jan 22, 2026</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-foreground mb-2">DevOps Essentials</h3>
+                    <p class="text-sm text-muted-foreground mb-3">Modern development and deployment practices</p>
+                </div>
+                <div class="p-4">
+                    <div class="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                        <span>🕒 1:00 PM EST</span>
+                        <span>👤 Mike Chen</span>
+                    </div>
+                    <button routerLink="/contact-us" class="w-full bg-accent hover:bg-accent-hover text-accent-foreground py-2 px-4 rounded-md font-semibold text-sm transition-colors">
+                        Register Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors h-10 rounded-md px-6 border border-border bg-transparent hover:bg-accent/10 text-foreground font-semibold">
+                View All Webinars
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Quick Benefits -->
+    <div class="bg-gradient-to-r from-card to-card/50 rounded-2xl p-8 md:p-10 mb-16">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">Why Attend Our Webinars?</h2>
+            <div class="grid md:grid-cols-3 gap-6 mt-6">
+                <div class="text-center">
+                    <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center mx-auto mb-3 text-accent-foreground font-bold">✓</div>
+                    <h4 class="font-semibold text-foreground mb-1">Expert Insights</h4>
+                    <p class="text-muted-foreground text-sm">Learn from industry leaders</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center mx-auto mb-3 text-accent-foreground font-bold">✓</div>
+                    <h4 class="font-semibold text-foreground mb-1">Career Tips</h4>
+                    <p class="text-muted-foreground text-sm">Practical career guidance</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center mx-auto mb-3 text-accent-foreground font-bold">✓</div>
+                    <h4 class="font-semibold text-foreground mb-1">Networking</h4>
+                    <p class="text-muted-foreground text-sm">Connect with peers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

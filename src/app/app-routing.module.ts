@@ -17,6 +17,8 @@ import { ClassroomTrainingComponent } from './classroom-training/classroom-train
 import { OneOnOneTrainingComponent } from './one-on-one-training/one-on-one-training.component';
 import { WebinarsAsAServiceComponent } from './webinars-as-a-service/webinars-as-a-service.component';
 import { UpcomingWebinarsComponent } from './upcoming-webinars/upcoming-webinars.component';
+import { OurPartnersComponent } from './about-us/about/our-partners/our-partners.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 const routes: Routes = [
    { path: '', component: HomeComponent },
    { path: 'home', component: HomeComponent },
@@ -27,6 +29,7 @@ const routes: Routes = [
       {path: 'leadership' , component: LeadershipComponent},
       {path: 'oneness-koshis' , component: OnenessKoshisComponent},
       {path: 'our-clients' , component: OurClientsComponent},
+      {path: 'our-partners' , component: OurPartnersComponent},
       {path: 'student-feedback' , component: StudentFeedbackComponent},
       {path: 'testimonial' , component: TestimonialComponent},
     ] 
@@ -38,6 +41,7 @@ const routes: Routes = [
    { path: 'webinars-as-a-service', component: WebinarsAsAServiceComponent },
    { path: 'upcoming-webinars', component: UpcomingWebinarsComponent },
    { path: 'course-description', component: CourseDetailsComponent },
+   { path: 'contact-us', component: ContactUsComponent },
    
 
 ];

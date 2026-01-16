@@ -1,1 +1,213 @@
-<p>live-online-traning works!</p>
+<!-- Hero Section -->
+<section class="relative min-h-[400px] md:min-h-[500px] flex items-center overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-primary-dark/90">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary/80 to-primary/60"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center animate-fade-in">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-primary-foreground leading-tight mb-6">
+                Live Online Training
+                <span class="block mt-2 text-accent">Interactive Learning from Anywhere</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-primary-foreground/90 mb-8 leading-relaxed max-w-3xl mx-auto">
+                Experience real-time, instructor-led training sessions from the comfort of your home or office. 
+                Connect with expert trainers and fellow learners in our interactive virtual classrooms.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button [routerLink]="['/courses']" 
+                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none h-12 rounded-md px-8 bg-accent hover:bg-accent-hover text-accent-foreground font-semibold shadow-lg btn-hover-lift">
+                    View Available Courses
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<div class="container mx-auto py-16 md:py-20">
+    <!-- Overview Section -->
+    <div class="max-w-4xl mx-auto mb-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">Why Choose Live Online Training?</h2>
+            <div class="w-20 h-1 bg-accent mx-auto rounded-full mb-6"></div>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Get the best of both worlds with our live online training - the flexibility of remote learning combined with the engagement of real-time instruction.
+            </p>
+        </div>
+    </div>
+
+    <!-- Key Features Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div class="bg-card p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-video text-accent">
+                    <path d="m22 8-6 4 6 4V8Z"/>
+                    <rect width="14" height="12" x="2" y="6" rx="2" ry="2"/>
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-foreground mb-3">Real-Time Interaction</h3>
+            <p class="text-muted-foreground leading-relaxed">
+                Engage directly with instructors and peers through live video conferencing, instant messaging, and interactive Q&A sessions.
+            </p>
+        </div>
+
+        <div class="bg-card p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock text-accent">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12,6 12,12 16,14"/>
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-foreground mb-3">Flexible Scheduling</h3>
+            <p class="text-muted-foreground leading-relaxed">
+                Choose from multiple time slots and attend sessions that fit your schedule, with options for different time zones.
+            </p>
+        </div>
+
+        <div class="bg-card p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users text-accent">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-foreground mb-3">Small Class Sizes</h3>
+            <p class="text-muted-foreground leading-relaxed">
+                Benefit from personalized attention with limited class sizes, ensuring quality interaction and comprehensive learning.
+            </p>
+        </div>
+
+        <div class="bg-card p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-speaker text-accent">
+                    <path d="M5.5 20H8"/>
+                    <path d="M17 9h.01"/>
+                    <rect width="10" height="16" x="12" y="4" rx="2"/>
+                    <path d="M8 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4"/>
+                    <circle cx="17" cy="15" r="1"/>
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-foreground mb-3">Advanced Technology</h3>
+            <p class="text-muted-foreground leading-relaxed">
+                Experience cutting-edge virtual learning platforms with screen sharing, breakout rooms, and collaborative tools.
+            </p>
+        </div>
+
+        <div class="bg-card p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download text-accent">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7,10 12,15 17,10"/>
+                    <line x1="12" x2="12" y1="15" y2="3"/>
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-foreground mb-3">Recording Access</h3>
+            <p class="text-muted-foreground leading-relaxed">
+                Miss a session? Access recorded training materials and replay sessions for comprehensive understanding.
+            </p>
+        </div>
+
+        <div class="bg-card p-6 rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow">
+            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones text-accent">
+                    <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>
+                </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-foreground mb-3">24/7 Support</h3>
+            <p class="text-muted-foreground leading-relaxed">
+                Get technical assistance and learning support whenever you need it, ensuring uninterrupted learning experience.
+            </p>
+        </div>
+    </div>
+
+    <!-- Training Process Section -->
+    <div class="mb-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">How It Works</h2>
+            <div class="w-20 h-1 bg-accent mx-auto rounded-full mb-6"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4 text-accent-foreground font-bold text-xl">1</div>
+                <h3 class="text-lg font-semibold text-foreground mb-2">Register & Setup</h3>
+                <p class="text-muted-foreground text-sm">Sign up for your preferred course and receive access to our virtual classroom platform.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4 text-accent-foreground font-bold text-xl">2</div>
+                <h3 class="text-lg font-semibold text-foreground mb-2">Join Live Sessions</h3>
+                <p class="text-muted-foreground text-sm">Attend scheduled live training sessions with expert instructors and fellow students.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4 text-accent-foreground font-bold text-xl">3</div>
+                <h3 class="text-lg font-semibold text-foreground mb-2">Practice & Apply</h3>
+                <p class="text-muted-foreground text-sm">Work on hands-on exercises and projects during interactive lab sessions.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4 text-accent-foreground font-bold text-xl">4</div>
+                <h3 class="text-lg font-semibold text-foreground mb-2">Get Certified</h3>
+                <p class="text-muted-foreground text-sm">Complete assessments and receive your professional certification upon successful completion.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="bg-gradient-to-r from-card to-card/50 rounded-2xl p-8 md:p-12 mb-16">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">Benefits of Live Online Training</h2>
+            <div class="grid md:grid-cols-2 gap-6 text-left">
+                <div class="flex items-start gap-3">
+                    <div class="w-5 h-5 bg-accent rounded-full flex-shrink-0 mt-1"></div>
+                    <div>
+                        <h4 class="font-semibold text-foreground mb-1">Cost-Effective Learning</h4>
+                        <p class="text-muted-foreground text-sm">Save on travel and accommodation costs while receiving the same high-quality training.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="w-5 h-5 bg-accent rounded-full flex-shrink-0 mt-1"></div>
+                    <div>
+                        <h4 class="font-semibold text-foreground mb-1">Global Accessibility</h4>
+                        <p class="text-muted-foreground text-sm">Access world-class training from anywhere in the world with just an internet connection.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="w-5 h-5 bg-accent rounded-full flex-shrink-0 mt-1"></div>
+                    <div>
+                        <h4 class="font-semibold text-foreground mb-1">Work-Life Balance</h4>
+                        <p class="text-muted-foreground text-sm">Learn without disrupting your work schedule or personal commitments.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="w-5 h-5 bg-accent rounded-full flex-shrink-0 mt-1"></div>
+                    <div>
+                        <h4 class="font-semibold text-foreground mb-1">Immediate Application</h4>
+                        <p class="text-muted-foreground text-sm">Apply learned skills immediately in your current role or projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center bg-card p-8 md:p-12 rounded-2xl border border-border shadow-sm">
+        <h2 class="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">Ready to Start Your Learning Journey?</h2>
+        <p class="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Join thousands of professionals who have advanced their careers through our live online training programs. 
+            Get started today and transform your future.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button routerLink="/contact-us"
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors h-11 rounded-md px-8 bg-accent hover:bg-accent-hover text-accent-foreground font-semibold shadow-lg btn-hover-lift">
+                Browse Courses
+            </button>
+           <button routerLink="/contact-us"
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors h-11 rounded-md px-8 border border-border bg-transparent hover:bg-accent/10 text-foreground font-semibold">
+                Contact Us
+            </button>
+        </div>
+    </div>
+</div>

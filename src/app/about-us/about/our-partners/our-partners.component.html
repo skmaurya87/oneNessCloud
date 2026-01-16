@@ -1,0 +1,52 @@
+ <div class="container mx-auto py-16 md:py-20" *ngIf="homePage">    
+    <app-heading [heading]="'Our Trusted Partners'" [align]="'text-center'"></app-heading>      
+    <div *ngIf="isLoading" class="text-center py-8">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
+        <p class="mt-2 text-muted-foreground">Loading partners...</p>
+    </div>
+    <owl-carousel-o *ngIf="!isLoading && partners.length > 0" [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let partner of partners">
+            <img [src]="'assets/images/partners/' + partner.logo" 
+                 [alt]="partner.name" 
+                 [title]="partner.name"
+                 style="max-width: 100%;" 
+                 class="object-contain">
+        </ng-template>
+    </owl-carousel-o>
+    <div *ngIf="!isLoading && partners.length === 0" class="text-center py-8">
+        <p class="text-muted-foreground">No partners data available.</p>
+    </div>
+</div>
+
+
+<div class="container mx-auto py-12 md:py-8">    
+<ng-container *ngIf="!homePage">
+    <app-heading [heading]="'Our Trusted Partners'" [align]="'text-center'"></app-heading>
+        <div *ngIf="!isLoading && partners.length === 0" class="text-center py-8">
+        <p class="text-muted-foreground">No partners data available.</p>
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center mb-8">
+       <p class="text-base text-gray-700 leading-relaxed">
+            We are proud to collaborate with industry-leading organizations and technology partners who share our commitment to excellence in IT training and professional development. Our strategic partnerships enable us to deliver cutting-edge courses, access to the latest technologies, and comprehensive certification programs that meet the evolving needs of today's digital landscape.
+        </p>
+       <p class="text-base text-gray-700 leading-relaxed mt-6">
+            These trusted partnerships ensure our learners receive world-class training backed by industry recognition and real-world expertise.
+        </p>
+    </div>
+
+    
+<div class="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="flex shadow w-full p-4 rounded-md border border-gray-200 rounded items-center justify-self-center hover:border-blue-400 transition-border duration-300" *ngFor="let partner of partners">
+        <img [src]="'assets/images/partners/' + partner.logo"  
+                 [alt]="partner.name" 
+                 [title]="partner.name"
+                 style="max-width: 100%;" 
+                 class="object-contain">
+    </div>
+</div>
+</ng-container>
+
+
+ </div>
+

@@ -22,6 +22,7 @@ export class AboutUsComponent implements OnInit {
     { label: 'Leadership', route: '/about-us/leadership', icon: 'fas fa-users' },
     { label: 'Oneness Koshis', route: '/about-us/oneness-koshis', icon: 'fas fa-om' },
     { label: 'Our Clients', route: '/about-us/our-clients', icon: 'fas fa-handshake' },
+    { label: 'Our Partners', route: '/about-us/our-partners', icon: 'fas fa-handshake' },
     { label: 'Student Feedback', route: '/about-us/student-feedback', icon: 'fas fa-comments' },
     { label: 'Testimonial', route: '/about-us/testimonial', icon: 'fas fa-quote-left' }
   ];

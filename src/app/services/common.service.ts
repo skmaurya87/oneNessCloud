@@ -29,6 +29,12 @@ export interface CourseCategory {
   courses: Course[];
 }
 
+export interface Partner {
+  id: string;
+  name: string;
+  logo: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -194,7 +200,7 @@ export class CommonService {
   /**
    * Get only partners data
    */
-  getPartners(): Observable<any[]> {
+  getPartners(): Observable<Partner[]> {
     return this.getClientsAndPartners().pipe(
       map(data => data.partners || [])
     );

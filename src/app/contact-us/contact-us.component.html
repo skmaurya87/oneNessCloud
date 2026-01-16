@@ -1,0 +1,267 @@
+<!-- Hero Section -->
+<section class="relative min-h-[300px] md:min-h-[350px] flex items-center overflow-hidden bg-gradient-to-br from-primary via-primary-dark/95 to-primary-dark">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/90 via-primary/80 to-primary/70"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center animate-fade-in">
+            <h1 class="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-primary-foreground leading-tight mb-6">
+                Contact Us
+                <span class="block mt-2 text-accent">Let's Start Your Learning Journey</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-primary-foreground/90 mb-8 leading-relaxed">
+                Have questions about our courses? Ready to advance your career? We're here to help you succeed.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<div class="container mx-auto py-16 md:py-20">
+    <!-- FAQ Section -->
+     <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <!-- Contact Form Section -->
+        <div class="bg-card p-8 rounded-2xl border border-border shadow-lg">
+            <div class="mb-6">
+                <h2 class="text-2xl md:text-3xl font-display font-bold text-foreground mb-3">Send Us a Message</h2>
+                <p class="text-muted-foreground">Fill out the form below and we'll get back to you within 24 hours.</p>
+            </div>
+            
+            <form (ngSubmit)="sendEmail()" #contactForm="ngForm" class="space-y-6">
+                <!-- Course Name Field (if applicable) -->
+                <div *ngIf="course?.title">
+                    <label class="block text-sm font-semibold text-foreground mb-2" for="courseName">Course of Interest</label>
+                    <input id="courseName"
+                        class="w-full rounded-lg border border-border p-3 bg-muted text-muted-foreground focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
+                        [value]="course.title" 
+                        name="course_name"
+                        [(ngModel)]="form.course_name"
+                        disabled />
+                </div>
+
+                <!-- Name Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-foreground mb-2" for="name">Full Name</label>
+                    <input
+                        class="w-full rounded-lg border border-border p-3 bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
+                        type="text"
+                        id="name"
+                        name="from_name"
+                        [(ngModel)]="form.from_name"
+                        placeholder="Enter your full name"
+                        required
+                        #nameField="ngModel" />
+                    <div *ngIf="nameField.invalid && nameField.touched" class="text-destructive text-sm mt-1 flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-circle">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" x2="12" y1="8" y2="12"/>
+                            <line x1="12" x2="12.01" y1="16" y2="16"/>
+                        </svg>
+                        Name is required
+                    </div>
+                </div>
+
+                <!-- Email Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-foreground mb-2" for="email">Email Address</label>
+                    <input
+                        class="w-full rounded-lg border border-border p-3 bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
+                        type="email"
+                        id="email"
+                        name="from_email"
+                        [(ngModel)]="form.from_email"
+                        placeholder="Enter your email address"
+                        required 
+                        email
+                        #emailField="ngModel" />
+                    <div *ngIf="emailField.invalid && emailField.touched" class="text-destructive text-sm mt-1 flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-circle">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" x2="12" y1="8" y2="12"/>
+                            <line x1="12" x2="12.01" y1="16" y2="16"/>
+                        </svg>
+                        <span *ngIf="emailField.errors?.['required']">Email is required</span>
+                        <span *ngIf="emailField.errors?.['email']">Please enter a valid email address</span>
+                    </div>
+                </div>
+
+                <!-- Phone Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-foreground mb-2" for="phone">Phone Number</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <span class="text-lg">🇮🇳</span>
+                        </div>
+                        <input
+                            class="w-full rounded-lg border border-border p-3 pl-12 bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent transition-colors"
+                            id="phone"
+                            placeholder="Enter your phone number" 
+                            pattern="[6-9]{1}[0-9]{9}"
+                            maxlength="16"
+                            required
+                            name="from_phone"
+                            [(ngModel)]="form.from_phone"
+                            title="Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9"
+                            type="tel" 
+                            #phoneField="ngModel" />
+                        <div *ngIf="phoneField.invalid && phoneField.touched" class="text-destructive text-sm mt-1 flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-circle">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" x2="12" y1="8" y2="12"/>
+                                <line x1="12" x2="12.01" y1="16" y2="16"/>
+                            </svg>
+                            <span *ngIf="phoneField.errors?.['required']">Phone number is required</span>
+                            <span *ngIf="phoneField.errors?.['pattern']">Please enter a valid 10-digit mobile number</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message Field -->
+                <div>
+                    <label class="block text-sm font-semibold text-foreground mb-2" for="message">Message</label>
+                    <textarea
+                        class="w-full rounded-lg border border-border p-3 bg-background text-foreground focus:ring-2 focus:ring-accent focus:border-accent transition-colors resize-none"
+                        id="message"
+                        name="from_message"
+                        [(ngModel)]="form.from_message"
+                        placeholder="Tell us about your training needs or ask any questions..."
+                        required 
+                        rows="5"
+                        #messageField="ngModel"></textarea>
+                    <div *ngIf="messageField.invalid && messageField.touched" class="text-destructive text-sm mt-1 flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-circle">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" x2="12" y1="8" y2="12"/>
+                            <line x1="12" x2="12.01" y1="16" y2="16"/>
+                        </svg>
+                        Message is required
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div>
+                    <button
+                        class="w-full bg-accent hover:bg-accent-hover text-accent-foreground font-semibold py-3 px-6 rounded-lg shadow-lg transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        type="submit"
+                        [disabled]="!contactForm.form.valid">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send">
+                            <path d="m22 2-7 20-4-9-9-4Z"/>
+                            <path d="M22 2 11 13"/>
+                        </svg>
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="space-y-8">
+            <!-- Contact Details -->
+            <div class="bg-card p-8 rounded-2xl border border-border shadow-lg">
+                <h3 class="text-xl md:text-2xl font-display font-bold text-foreground mb-6">Get In Touch</h3>
+                
+                <div class="space-y-6">
+                    <!-- Email -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail text-accent">
+                                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                <path d="m22 7-10 5L2 7"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-foreground mb-1">Email Us</h4>
+                            <p class="text-muted-foreground">info@onenesscloud.com</p>
+                            <p class="text-muted-foreground">support@onenesscloud.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone text-accent">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-foreground mb-1">Call Us</h4>
+                            <p class="text-muted-foreground">+91 98765 43210</p>
+                            <p class="text-muted-foreground text-sm">Mon-Fri 9AM-6PM IST</p>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin text-accent">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-foreground mb-1">Visit Us</h4>
+                            <p class="text-muted-foreground">123 Tech Hub, Sector 62<br>Noida, Uttar Pradesh 201309<br>India</p>
+                        </div>
+                    </div>
+
+                    <!-- Hours -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock text-accent">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-foreground mb-1">Business Hours</h4>
+                            <p class="text-muted-foreground">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p class="text-muted-foreground">Saturday: 10:00 AM - 4:00 PM</p>
+                            <p class="text-muted-foreground">Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="bg-card p-8 rounded-2xl border border-border shadow-lg">
+                <h3 class="text-xl md:text-2xl font-display font-bold text-foreground mb-6">Quick Actions</h3>
+                
+                <div class="space-y-4">
+                    <button [routerLink]="['/courses']" class="w-full flex items-center gap-3 p-4 rounded-lg border border-border hover:bg-accent/10 hover:border-accent transition-colors text-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open text-accent">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                        <div>
+                            <h4 class="font-semibold text-foreground">Browse Courses</h4>
+                            <p class="text-muted-foreground text-sm">Explore our training programs</p>
+                        </div>
+                    </button>
+
+                    <button [routerLink]="['/upcoming-webinars']" class="w-full flex items-center gap-3 p-4 rounded-lg border border-border hover:bg-accent/10 hover:border-accent transition-colors text-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar text-accent">
+                            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                            <line x1="16" x2="16" y1="2" y2="6"/>
+                            <line x1="8" x2="8" y1="2" y2="6"/>
+                            <line x1="3" x2="21" y1="10" y2="10"/>
+                        </svg>
+                        <div>
+                            <h4 class="font-semibold text-foreground">Upcoming Webinars</h4>
+                            <p class="text-muted-foreground text-sm">Join our free sessions</p>
+                        </div>
+                    </button>
+
+                    <button class="w-full flex items-center gap-3 p-4 rounded-lg border border-border hover:bg-accent/10 hover:border-accent transition-colors text-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download text-accent">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" x2="12" y1="15" y2="3"/>
+                        </svg>
+                        <div>
+                            <h4 class="font-semibold text-foreground">Course Brochure</h4>
+                            <p class="text-muted-foreground text-sm">Download detailed information</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

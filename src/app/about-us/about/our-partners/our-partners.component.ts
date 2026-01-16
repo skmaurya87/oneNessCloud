@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { CommonService } from '../../services/common.service';
+import { CommonService, Partner } from '../../../services/common.service';
+
 @Component({
   selector: 'app-our-partners',
   templateUrl: './our-partners.component.html',
   styleUrls: ['./our-partners.component.css']
 })
 export class OurPartnersComponent implements OnInit {
-  partners: any[] = [];
+  partners: Partner[] = [];
   isLoading = true;
+  @Input() homePage: boolean = false;
 
   constructor(private commonService: CommonService) {}
 
@@ -18,11 +20,11 @@ export class OurPartnersComponent implements OnInit {
 
   private loadPartners(): void {
     this.commonService.getPartners().subscribe({
-      next: (partners) => {
+      next: (partners: Partner[]) => {
         this.partners = partners;
         this.isLoading = false;
       },
-      error: (error) => {
+      error: (error: any) => {
         console.error('Error loading partners:', error);
         this.isLoading = false;
       }

@@ -1,1 +1,57 @@
-<p>student-feedback works!</p>
+<div class="py-12 md:py-8">
+  <app-heading [heading]="'Student Success Stories'" [align]="'text-center'"></app-heading>
+  
+  <div class="max-w-4xl mx-auto text-center mb-8 px-4">
+    <p class="text-base text-gray-700 leading-relaxed">
+      Discover how our comprehensive training programs have transformed careers and empowered students to achieve their professional goals. 
+      These authentic testimonials showcase the real impact of our expert-led courses, hands-on projects, and dedicated mentorship. 
+      Join thousands of successful graduates who have advanced their careers, secured dream jobs, and built the skills needed to 
+      thrive in today's competitive tech industry.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:p-4 md:p-4 lg:p-4">
+    <ng-container *ngFor="let feedback of studentFeedbacks">
+      <div class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-base shadow-xs hover:shadow-md transition-shadow duration-300">
+        
+        <!-- Student Photo -->
+        <div class="flex items-center mb-4">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" 
+               [src]="feedback.img || (feedback.gender === 'female' ? 'assets/images/dummy2.jpg' : 'assets/images/dummy1.jpg')"
+               (error)="onImgError($event, feedback)"
+               [alt]="feedback.name" />
+          <div>
+            <h5 class="text-md font-semibold tracking-tight text-heading mb-1">{{feedback.name}}</h5>
+            <p class="text-xs text-gray-600">{{feedback.position}} at {{feedback.company}}</p>
+          </div>
+        </div>
+
+        <!-- Course Badge -->
+        <div class="mb-3">
+          <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+            {{feedback.course}}
+          </span>
+        </div>
+
+        <!-- Rating Stars -->
+        <div class="flex items-center mb-3">
+          <ng-container *ngFor="let star of getStarArray(feedback.rating); let i = index">
+            <svg class="w-4 h-4 fill-current" 
+                 [class.text-yellow-400]="star" 
+                 [class.text-gray-300]="!star" 
+                 viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          </ng-container>
+          <span class="ml-2 text-sm text-gray-600">({{feedback.rating}}/5)</span>
+        </div>
+
+        <!-- Feedback Text -->
+        <p class="text-sm text-gray-700 leading-relaxed line-clamp-4">
+          "{{feedback.feedback}}"
+        </p>
+        
+      </div>
+    </ng-container>
+  </div>
+</div>

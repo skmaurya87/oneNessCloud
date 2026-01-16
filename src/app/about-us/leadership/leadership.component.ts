@@ -20,6 +20,7 @@ export class LeadershipComponent implements OnInit {
     this.commonService.getLeadership().subscribe({
       next: (leaders) => {
         this.leaders = leaders;
+        
         this.isLoading = false;
       },
       error: (error) => {
@@ -29,8 +30,19 @@ export class LeadershipComponent implements OnInit {
     });
   }
 
-  onImgError(event: Event) {
-  (event.target as HTMLImageElement).src = 'assets/images/leader1.jpg';
+onImgError(event: Event, leader: any) {
+  const imgElement = event.target as HTMLImageElement;
+
+  // Prevent infinite loop
+  if (imgElement.src.includes('dummy')) {
+    return;
+  }
+
+  imgElement.src =
+    leader.gender === 'female'
+      ? 'assets/images/dummy2.jpg'
+      : 'assets/images/dummy1.jpg';
 }
+
 
 }

@@ -17,6 +17,7 @@ interface MenuItem {
   submenu?: MenuItem[];
   mobileOpenKey?: string;
   isDynamic?: boolean;
+  icon?: string;  
 }
 
 @Component({
@@ -47,14 +48,13 @@ export class NavbarComponent {
       hasDropdown: true,
       mobileOpenKey: 'aboutUs',
       submenu: [
-        { label: 'About Us', routerLink: 'about-us/about' },
-        { label: 'Our Clients', routerLink: 'about-us/our-clients' },
-        { label: 'Leadership', routerLink: 'about-us/leadership' },
-        { label: 'Partners', routerLink: 'about-us/partners' },
-        { label: 'Happiness Guarantee', routerLink: 'about-us/happiness-guarantee' },
-        { label: 'Student Feedback', routerLink: 'about-us/student-feedback' },
-        { label: 'Testimonial', routerLink: 'about-us/testimonial' },
-        { label: 'Oneness Koshis', routerLink: 'about-us/oneness-koshis' }
+    { label: 'Happiness Guarantee', routerLink: '/about-us/happiness-guarantee', icon: 'fas fa-smile' },
+    { label: 'Leadership', routerLink: '/about-us/leadership', icon: 'fas fa-users' },
+    { label: 'Oneness Koshis', routerLink: '/about-us/oneness-koshis', icon: 'fas fa-om' },
+    { label: 'Our Clients', routerLink: '/about-us/our-clients', icon: 'fas fa-handshake' },
+    { label: 'Our Partners', routerLink: '/about-us/our-partners', icon: 'fas fa-handshake' },
+    { label: 'Student Feedback', routerLink: '/about-us/student-feedback', icon: 'fas fa-comments' },
+    { label: 'Testimonial', routerLink: '/about-us/testimonial', icon: 'fas fa-quote-left' }
       ]
     },
     {
@@ -63,16 +63,16 @@ export class NavbarComponent {
       hasDropdown: true,
       mobileOpenKey: 'learningOptions',
       submenu: [
-        { label: 'Live Online Training', routerLink: 'learning/live-online-training' },
-        { label: 'Classroom Training', routerLink: 'learning/classroom-training' },
-        { label: '1-on-1 Training', routerLink: 'learning/one-on-one-training' },
-        { label: 'Webinars as a Service', routerLink: 'learning/webinars-as-a-service' },
-        { label: 'Upcoming webinars', routerLink: 'learning/upcoming-webinars' }
+        { label: 'Live Online Training', routerLink: 'live-online-training' },
+        { label: 'Classroom Training', routerLink: 'classroom-training' },
+        { label: '1-on-1 Training', routerLink: 'one-on-one-training' },
+        { label: 'Webinars as a Service', routerLink: 'webinars-as-a-service' },
+        { label: 'Upcoming webinars', routerLink: 'upcoming-webinars' }
       ]
     },
     {
       label: 'Contact Us',
-      routerLink: 'contact-us',
+      routerLink: 'contact-us', 
       hasDropdown: false
     }
   ];

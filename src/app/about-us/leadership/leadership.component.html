@@ -13,10 +13,13 @@
 
 <ng-container *ngFor="let leader of leaders">    
 <div class="bg-neutral-primary-soft block max-w-sm p-4 border border-default rounded-base shadow-xs">
-    <img class="rounded-base" 
-    [src]="leader.img || 'assets/images/leader1.jpg'"
-    (error)="onImgError($event)"
-    [alt]="leader.name" />
+  <img  class="w-full md:h-64 object-cover rounded-base"
+     [src]="leader.img"
+     (error)="leader.img = leader.gender === 'female'
+       ? 'assets/images/dummy2.jpg'
+       : 'assets/images/dummy1.jpg'"
+     [alt]="leader.name" />
+
     
     <h5 class="mt-6 mb-2 text-md font-semibold tracking-tight text-heading">{{leader.name}}</h5>
     <p class="mb-6 text-sm">{{leader.bio}}</p>
