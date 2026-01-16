@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Karan Bisth",
+    "img": "assets/images/leader1.jpg",
+    "gender": "male",
+    "bio": "Learn ethical hacking with AI-powered cybersecurity tools to identify vulnerabilities and secure modern IT infrastructures."
+  },
+  {
+    "id": 2,
+    "name": "Rohit Sharma",
+    "img": "assets/images/leader2.jpg",
+    "gender": "male",
+    "bio": "Expert in cloud computing and DevOps practices, helping organizations build scalable and secure cloud-native solutions."
+  },
+  {
+    "id": 3,
+    "name": "Anita Verma",
+    "img": "assets/images/leader3.jpg",
+    "gender": "female",
+    "bio": "Specialist in data science and AI, transforming raw data into meaningful insights for business growth."
+  },
+  {
+    "id": 4,
+    "name": "Amit Singh",
+    "img": "assets/images/leader4.jpg",
+    "gender": "male",
+    "bio": "Seasoned full-stack developer focused on building high-performance web applications with modern frameworks."
+  },
+  {
+    "id": 5,
+    "name": "Neha Gupta",
+    "img": "assets/images/leader5.jpg",
+    "gender": "female",
+    "bio": "UI/UX design leader passionate about creating user-centric designs that enhance usability and engagement."
+  },
+  {
+    "id": 6,
+    "name": "Sandeep Mishra",
+    "img": "assets/images/leader6.jpg",
+    "gender": "male",
+    "bio": "Cybersecurity strategist with deep expertise in risk assessment, compliance, and enterprise security architecture."
+  }
+]
