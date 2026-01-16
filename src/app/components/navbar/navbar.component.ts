@@ -44,7 +44,7 @@ export class NavbarComponent {
     },
     {
       label: 'About Us',
-      routerLink: 'about-us',
+      routerLink: 'about-us/about',
       hasDropdown: true,
       mobileOpenKey: 'aboutUs',
       submenu: [
