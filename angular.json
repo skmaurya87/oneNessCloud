@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "aadi-scaffolding-site-app": {
+    "onenesscloud-site-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,9 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/oneNessCloud",
+            "outputPath": "dist/onenesscloud",
             "index": "src/index.html",
-             "baseHref": "/oneNessCloud/",
+             "baseHref": "/onenesscloud/",
             "main": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "aadi-scaffolding-site-app:build:production"
+              "browserTarget": "onenesscloud-site-app:build:production"
             },
             "development": {
-              "browserTarget": "aadi-scaffolding-site-app:build:development"
+              "browserTarget": "onenesscloud-site-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "aadi-scaffolding-site-app:build"
+            "browserTarget": "onenesscloud-site-app:build"
           }
         },
         "test": {
